@@ -599,14 +599,28 @@
 }
 
 
-/* 가로 스크롤 기능 유지 */
+
 .view {
-  overflow-x: scroll; /* 가로 스크롤 가능하게 설정 */
-  -ms-overflow-style: none;  /* IE 및 Edge에서 스크롤바 숨기기 */
-  scrollbar-width: none;  /* Firefox에서 스크롤바 숨기기 */
+  overflow-x: scroll; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
-/* Webkit 기반 브라우저 (Chrome, Safari 등)에서 스크롤바 숨기기 */
+
 .view::-webkit-scrollbar {
   display: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+button .text-wrapper, button .text-wrapper-2, button .text-wrapper-3, button .text-wrapper-4 {
+  margin-left: 5px;
+  font-size: 14px;
 }

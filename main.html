@@ -5,16 +5,6 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="mainguide.css" />
     <link rel="stylesheet" href="maincss.css" />
-    <style>
-      .view {
-        overflow-x: hidden;
-      }
-
-      .view {
-        display: flex;
-        flex-wrap: nowrap;
-      }
-    </style>
   </head>
   <body>
     <div class="div-wrapper">
@@ -22,23 +12,26 @@
         <div class="overlap">
           <div class="frame"><img class="image" src="img/image 2.png" /></div>
           <div class="view">
-            <div class="frame-2">
-              <div class="text-wrapper">공사 현장</div>
-              <img class="img" src="img/gongsa.png" />
-            </div>
-            <div class="frame-3">
-              <div class="text-wrapper-2">편의점</div>
-              <img class="image-2" src="img/store.png" />
-            </div>
-            <div class="frame-4">
-              <div class="text-wrapper-2">소방 시설</div>
-              <img class="element" src="img/oneonenine.png" />
-            </div>
-            <div class="frame-5">
-              <div class="text-wrapper-3">경찰서</div>
-              <img class="img" src="img/police.png" />
-            </div>
-            <div class="view-2"><div class="text-wrapper-4">범죄 주의 구간</div></div>
+            <!-- 버튼 요소로 변경된 부분 -->
+            <button class="frame-2">
+              <img class="img" src="img/gongsa.png" alt="공사 현장 아이콘" />
+              <span class="text-wrapper">공사 현장</span>
+            </button>
+            <button class="frame-3">
+              <img class="image-2" src="img/store.png" alt="편의점 아이콘" />
+              <span class="text-wrapper-2">편의점</span>
+            </button>
+            <button class="frame-4">
+              <img class="element" src="img/oneonenine.png" alt="소방 시설 아이콘" />
+              <span class="text-wrapper-2">소방 시설</span>
+            </button>
+            <button class="frame-5">
+              <img class="img" src="img/police.png" alt="경찰서 아이콘" />
+              <span class="text-wrapper-3">경찰서</span>
+            </button>
+            <button class="view-2">
+              <span class="text-wrapper-4">범죄 주의 구간</span>
+            </button>
           </div>
           <div class="overlap-wrapper">
             <div class="overlap-group">
