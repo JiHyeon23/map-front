@@ -1,0 +1,104 @@
+.screen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: var(--x);
+  width: 412px;
+  height: 917px;
+  position: relative;
+}
+
+.screen .view {
+  position: absolute;
+  width: 362px;
+  height: 64px;
+  top: 804px;
+  left: 25px;
+  background-color: var(--x-41-2zd-n);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.screen .text-wrapper {
+  height: 20px;
+  top: 21px;
+  left: 144px;
+  font-family: "Inter-Thin", Helvetica;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+  position: absolute;
+  color: var(--a-9um-5n);
+  letter-spacing: 0.25px;
+}
+
+.screen .image {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 54px;
+  left: 181px;
+  object-fit: cover;
+}
+
+.screen .p {
+  height: 70px;
+  top: 123px;
+  left: 22px;
+  font-family: "Inter_semiBold", Helvetica;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  position: absolute;
+  color: #000000;
+  letter-spacing: 0.25px;
+}
+
+.screen .frame {
+  position: absolute;
+  width: 52px;
+  height: 5px;
+  top: 734px;
+  left: 180px;
+  object-fit: cover;
+}
+
+.screen .element-wrapper {
+  position: absolute;
+  width: 220px;
+  height: 480px;
+  top: 250px;
+  left: 96px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dedede45;
+  box-shadow: inset 1px 1px 6px #0000000d, 9px 10px 10px #2e2e2e1a;
+}
+
+.screen .element {
+  position: absolute;
+  width: 200px;
+  height: 460px;
+  top: 10px;
+  left: 10px;
+  object-fit: cover;
+}
+
+.screen .arrow-right {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 455px;
+  left: 362px;
+}
