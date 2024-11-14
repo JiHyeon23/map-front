@@ -1,272 +1,278 @@
 .div-wrapper {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .div-wrapper .div {
-    background-color: var(--x);
-    width: 412px;
-    height: 917px;
-    position: relative;
-  }
-  
-  .div-wrapper .text-wrapper {
-    top: 151px;
-    left: 150px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 30px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .view {
-    position: absolute;
-    width: 362px;
-    height: 77px;
-    top: 228px;
-    left: 25px;
-  }
-  
-  .div-wrapper .text-wrapper-2 {
-    top: 0;
-    left: 0;
-    font-family: "Inter-Thin", Helvetica;
-    font-weight: 100;
-    color: #000000;
-    font-size: 15px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .view-2 {
-    position: absolute;
-    width: 165px;
-    height: 45px;
-    top: 32px;
-    left: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .text-wrapper-3 {
-    top: 11px;
-    left: 14px;
-    font-family: "Inter-Thin", Helvetica;
-    font-weight: 100;
-    color: #717171;
-    font-size: 15px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .view-3 {
-    position: absolute;
-    width: 165px;
-    height: 45px;
-    top: 32px;
-    left: 197px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .text-wrapper-4 {
-    top: 40px;
-    left: 175px;
-    font-family: "Inter-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 15px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .view-4 {
-    position: absolute;
-    width: 362px;
-    height: 77px;
-    top: 327px;
-    left: 25px;
-  }
-  
-  .div-wrapper .view-5 {
-    position: absolute;
-    width: 252px;
-    height: 45px;
-    top: 32px;
-    left: 110px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .view-6 {
-    position: absolute;
-    width: 97px;
-    height: 45px;
-    top: 32px;
-    left: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .text-wrapper-5 {
-    top: 12px;
-    left: 21px;
-    font-family: "Inter-Medium", Helvetica;
-    font-weight: 500;
-    color: #000000;
-    font-size: 15px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .view-7 {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 8px;
-    left: 66px;
-    background-image: url(./img/arrow-down.svg);
-    background-size: 100% 100%;
-  }
-  
-  .div-wrapper .view-8 {
-    position: absolute;
-    width: 362px;
-    height: 77px;
-    top: 444px;
-    left: 25px;
-  }
-  
-  .div-wrapper .element-wrapper {
-    position: absolute;
-    width: 362px;
-    height: 45px;
-    top: 32px;
-    left: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .p {
-    top: 11px;
-    left: 14px;
-    font-family: "Inter-Thin", Helvetica;
-    font-weight: 400;
-    color: #717171;
-    font-size: 15px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .span {
-    font-weight: 100;
-    letter-spacing: 0.04px;
-  }
-  
-  .div-wrapper .text-wrapper-6 {
-    font-family: "Inter-Regular", Helvetica;
-    letter-spacing: 0.04px;
-  }
-  
-  .div-wrapper .view-9 {
-    position: absolute;
-    width: 362px;
-    height: 219px;
-    top: 561px;
-    left: 25px;
-  }
-  
-  .div-wrapper .view-10 {
-    position: absolute;
-    width: 362px;
-    height: 187px;
-    top: 32px;
-    left: 0;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .view-wrapper {
-    position: absolute;
-    width: 362px;
-    height: 64px;
-    top: 818px;
-    left: 25px;
-  }
-  
-  .div-wrapper .view-11 {
-    position: relative;
-    height: 64px;
-    background-color: #ececec;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: #dadada;
-  }
-  
-  .div-wrapper .text-wrapper-7 {
-    top: 21px;
-    left: 141px;
-    font-family: "Inter-Thin", Helvetica;
-    font-weight: 100;
-    color: #717171;
-    font-size: 20px;
-    position: absolute;
-    height: 20px;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    white-space: nowrap;
-  }
-  
-  .div-wrapper .image {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 30px;
-    left: 156px;
-    object-fit: cover;
-  }
-  
-  .div-wrapper .vector {
-    position: absolute;
-    width: 19px;
-    height: 19px;
-    top: 15px;
-    left: 378px;
-  }
-  
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.div-wrapper .div {
+  background-color: var(--x);
+  width: 412px;
+  height: 917px;
+  position: relative;
+}
+
+.div-wrapper .text-wrapper {
+  top: 151px;
+  left: 150px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 30px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .view {
+  position: absolute;
+  width: 362px;
+  height: 77px;
+  top: 228px;
+  left: 25px;
+}
+
+.div-wrapper .text-wrapper-2 {
+  top: 0;
+  left: 0;
+  font-family: "Inter-Thin", Helvetica;
+  font-weight: 100;
+  color: #000000;
+  font-size: 15px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .view-2 {
+  position: absolute;
+  width: 165px;
+  height: 45px;
+  top: 32px;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .text-wrapper-3 {
+  top: 11px;
+  left: 14px;
+  font-family: "Inter-Thin", Helvetica;
+  font-weight: 100;
+  color: #717171;
+  font-size: 15px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .view-3 {
+  position: absolute;
+  width: 165px;
+  height: 45px;
+  top: 32px;
+  left: 197px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .text-wrapper-4 {
+  top: 40px;
+  left: 175px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .view-4 {
+  position: absolute;
+  width: 362px;
+  height: 77px;
+  top: 327px;
+  left: 25px;
+}
+
+.div-wrapper .view-5 {
+  position: absolute;
+  width: 252px;
+  height: 45px;
+  top: 32px;
+  left: 110px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .view-6 {
+  position: absolute;
+  width: 97px;
+  height: 45px;
+  top: 32px;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .text-wrapper-5 {
+  top: 12px;
+  left: 21px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .view-7 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  left: 66px;
+  background-image: url(./img/arrow-down.svg);
+  background-size: 100% 100%;
+}
+
+.div-wrapper .view-8 {
+  position: absolute;
+  width: 362px;
+  height: 77px;
+  top: 444px;
+  left: 25px;
+}
+
+.div-wrapper .element-wrapper {
+  position: absolute;
+  width: 362px;
+  height: 45px;
+  top: 32px;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .p {
+  top: 14px; 
+  left: 14px;
+  font-family: "Inter-Thin", Helvetica;
+  font-weight: 400;
+  color: #717171;
+  font-size: 15px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+
+.span {
+  font-weight: 100;
+  letter-spacing: 0.04px;
+}
+
+.title-input {
+  position: relative;
+  top: -14px;
+}
+
+
+.div-wrapper .text-wrapper-6 {
+  font-family: "Inter-Regular", Helvetica;
+  letter-spacing: 0.04px;
+}
+
+.div-wrapper .view-9 {
+  position: absolute;
+  width: 362px;
+  height: 219px;
+  top: 561px;
+  left: 25px;
+}
+
+.div-wrapper .view-10 {
+  position: absolute;
+  width: 362px;
+  height: 187px;
+  top: 32px;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .view-wrapper {
+  position: absolute;
+  width: 362px;
+  height: 64px;
+  top: 818px;
+  left: 25px;
+}
+
+.div-wrapper .view-11 {
+  position: relative;
+  height: 64px;
+  background-color: #ececec;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #dadada;
+}
+
+.div-wrapper .text-wrapper-7 {
+  top: 21px;
+  left: 141px;
+  font-family: "Inter-Thin", Helvetica;
+  font-weight: 100;
+  color: #717171;
+  font-size: 20px;
+  position: absolute;
+  height: 20px;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.div-wrapper .image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 30px;
+  left: 156px;
+  object-fit: cover;
+}
+
+.div-wrapper .vector {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 15px;
+  left: 378px;
+}
