@@ -73,7 +73,26 @@
     left: 96px;
     background-color: #ebebeb;
     border-radius: 10px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    padding: 10px 20px 10px 1px;
+    background-color: transparent;
+    font-size: 16px;
+    color: #626262;
+    outline: none;
+  }
+  
+  .div-wrapper .img {
+    width: 24px;
+    height: 27px;
+    margin-left: 8px;
   }
   
   .div-wrapper .text-wrapper-2 {
@@ -109,7 +128,7 @@
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid;
-    border-color: var(--l-eu-7xv);
+    border-color: #FFB10C;
   }
   
   .div-wrapper .text-wrapper-3 {
@@ -129,10 +148,10 @@
   
   .div-wrapper .vector {
     position: absolute;
-    width: 23px;
-    height: 16px;
-    top: 12px;
-    left: 8px;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    left: 7px;
   }
   
   .div-wrapper .menu {
@@ -157,7 +176,12 @@
     height: 817px;
     top: 100px;
     left: 0;
-    overflow: scroll;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .div-wrapper .overlap-group-wrapper ::-webkit-scrollbar {
+      display: none;
   }
   
   .div-wrapper .overlap-group {
