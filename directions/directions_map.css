@@ -170,20 +170,6 @@
     left: 377px;
   }
   
-  .div-wrapper .overlap-group-wrapper {
-    position: absolute;
-    width: 412px;
-    height: 817px;
-    top: 100px;
-    left: 0;
-    overflow: auto;
-    scrollbar-width: none;
-  }
-
-  .div-wrapper .overlap-group-wrapper ::-webkit-scrollbar {
-      display: none;
-  }
-  
   .div-wrapper .overlap-group {
     position: relative;
     width: 2304px;
@@ -194,52 +180,3 @@
     background-size: cover;
     background-position: 50% 50%;
   }
-  
-  .div-wrapper .vector-3 {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 599px;
-    left: 533px;
-  }
-  
-  .div-wrapper .vector-4 {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 703px;
-    left: 464px;
-  }
-  
-  .div-wrapper .vector-5 {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 592px;
-    left: 656px;
-  }
-  
-  .div-wrapper .frame {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 726px;
-    left: 638px;
-  }
-  
-  .div-wrapper .vector-6 {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 726px;
-    left: 741px;
-  }
-  
-  .div-wrapper .vector-7 {
-    position: absolute;
-    width: 23px;
-    height: 33px;
-    top: 860px;
-    left: 615px;
-  }
-  
