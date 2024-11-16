@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="findwaybus_styleguide.css" />
+    <link rel="stylesheet" href="findwaybus_style.css" />
+    <style>
+        .clickable {
+            cursor: pointer; /* 클릭 커서 */
+        }
+    </style>
+</head>
+<body>
+    <div class="div-wrapper">
+        <div class="div">
+            <div class="stop-edge">
+                <div class="view">
+                    <div class="text-wrapper">버스</div>
+                    <div class="bus-electric"></div>
+                    <img class="vector clickable" src="img/busyellow.svg" onclick="toggleBus()" />
+                </div>
+                <div class="overlap-group-wrapper">
+                    <div class="overlap-group">
+                        <div class="text-wrapper-2">도보</div>
+                        <img class="motion-sensor clickable" src="img/runningmanblack.png" onclick="toggleVector()" />
+                    </div>
+                </div>
+            </div>
+            <img class="line" src="img/line-2.svg" />
+            <div class="text-wrapper-3">도착지를 입력해주세요</div>
+            <div class="view-2">
+                <div class="map-spicy"><div class="text-wrapper-4">map spicy</div></div>
+                <div class="image-wrapper"><img class="image" src="img/mapspicy.png" /></div>
+                <img class="menu clickable" src="img/menu.svg" onclick="toggleMenu()" />
+            </div>
+            <div class="view-3">
+                <div class="frame">
+                    <!-- 입력 필드에 onkeydown 이벤트 추가 -->
+                    <input type="text" class="text-wrapper-5" placeholder="출발지 입력" onkeydown="checkEnter(event)" />
+                </div>
+                <div class="frame-2"><div class="text-wrapper-6">다이소 대구 신당점</div></div>
+                <div class="frame-3"></div>
+                <div class="overlap">
+                    <img class="group" src="img/x.svg" />
+                </div>
+                <div class="overlap-2">
+                    <img class="arrow-left" src="img/arrow-top.png" /> <img class="arrow-left-2" src="img/arrow-down.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleBus() {
+            // Bus icon clicked - 원하는 동작 추가
+            console.log("Bus icon clicked!");
+        }
+
+        function toggleVector() {
+            // Running man icon clicked - 원하는 동작 추가
+            console.log("Running man icon clicked!");
+        }
+
+        function toggleMenu() {
+            // Menu icon clicked - 원하는 동작 추가
+            console.log("Menu icon clicked!");
+        }
+
+        // 엔터키가 눌리면 페이지 이동
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                window.location.href = "direction_list.html"; // 원하는 페이지로 이동
+            }
+        }
+    </script>
+</body>
+</html>
