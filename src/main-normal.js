@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './main-normal.css';
+import MapComponent from './MapComponent';
+import ButtonSection from './main/ButtonSection';
 
-import gong4 from './img/gong4.png';
-import store from './img/store.png';
-import oneonenine from './img/oneonenine.png';
-import police from './img/police.png';
 import humanFemale from './img/human-female-normal.svg';
 import humanWheelchair from './img/human-wheelchair-normal.svg';
 import humanMale from './img/human-male-normal.svg';
@@ -12,15 +10,18 @@ import pull from './img/pull.svg';
 import mapSpicy from './img/mapspicy.png';
 import mike from './img/mike.svg';
 import menu from './img/menu.svg';
+import humanFemaleGril from './img/human-female-girl.svg';
+import humanWheelchairGril from './img/human-wheelchair-girl.svg';
+import humanMaleGirl from './img/human-male-girl.svg';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
     const [top, setTop] = useState('calc(100% - 50px)');
-    const [height, setHeight] = useState('50px');
+    const [height, setHeight] = useState('57px');
 
     const toggleHeight = () => {
         if (isOpen) {
-            setHeight('50px');
+            setHeight('57px');
             setTop('calc(100% - 50px)');
         } else {
             setHeight('371px');
@@ -29,111 +30,16 @@ function App() {
         setIsOpen(!isOpen);
     };
 
-    const [activeButton, setActiveButton] = useState(null);
-
-    const handleButtonClick = (buttonId) => {
-        setActiveButton((prevActiveButton) =>
-            prevActiveButton === buttonId ? null : buttonId
-        );
-    };
-
     return (
         <div className="element">
             <div className="div">
                 <div className="overlap">
-                    <div className="frame">{/* 지도? */}</div>
-                    <div className="view-normal">
-                        <div className="frame-2">
-                            <button
-                                className="button-wrapper"
-                                style={{
-                                    backgroundColor:
-                                        activeButton === 'gong4'
-                                            ? '#FFE2A4'
-                                            : '#ffffff',
-                                }}
-                                onClick={() => handleButtonClick('gong4')}
-                            >
-                                <img
-                                    className="img"
-                                    src={gong4}
-                                    alt="공사 현장 이미지"
-                                />
-                                <span className="text-wrapper">공사 현장</span>
-                            </button>
+                    <div className="frame">
+                        <div>
+                            <MapComponent />
                         </div>
-                        <div className="frame-3">
-                            <button
-                                className="button-wrapper-2"
-                                style={{
-                                    backgroundColor:
-                                        activeButton === 'store'
-                                            ? '#FFE2A4'
-                                            : '#ffffff',
-                                }}
-                                onClick={() => handleButtonClick('store')}
-                            >
-                                <img
-                                    className="image-2"
-                                    src={store}
-                                    alt="편의점 이미지"
-                                />
-                                <span className="text-wrapper">편의점</span>
-                            </button>
-                        </div>
-                        <div className="frame-4">
-                            <button
-                                className="button-wrapper-3"
-                                style={{
-                                    backgroundColor:
-                                        activeButton === 'oneonenine'
-                                            ? '#FFE2A4'
-                                            : '#ffffff',
-                                }}
-                                onClick={() => handleButtonClick('oneonenine')}
-                            >
-                                <img
-                                    className="img-2"
-                                    src={oneonenine}
-                                    alt="소방 시설 이미지"
-                                />
-                                <span className="text-wrapper">소방 시설</span>
-                            </button>
-                        </div>
-                        <div className="frame-5">
-                            <button
-                                className="button-wrapper-4"
-                                style={{
-                                    backgroundColor:
-                                        activeButton === 'police'
-                                            ? '#FFE2A4'
-                                            : '#ffffff',
-                                }}
-                                onClick={() => handleButtonClick('police')}
-                            >
-                                <img
-                                    className="img"
-                                    src={police}
-                                    alt="경찰서 이미지"
-                                />
-                                <span className="text-wrapper">경찰서</span>
-                            </button>
-                        </div>
-                        <button
-                            className="button-wrapper-5"
-                            style={{
-                                backgroundColor:
-                                    activeButton === 'crime'
-                                        ? '#FFE2A4'
-                                        : '#ffffff',
-                            }}
-                            onClick={() => handleButtonClick('crime')}
-                        >
-                            <span className="text-wrapper-4">
-                                범죄 주의 구간
-                            </span>
-                        </button>
                     </div>
+                    <ButtonSection />
                     <div
                         className="overlap-wrapper"
                         style={{
