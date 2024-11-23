@@ -28,12 +28,12 @@ function MapComponent() {
                                 );
                             } else {
                                 alert(
-                                    '위치 정확도가 낮아 서울 시청으로 지도를 업데이트합니다.'
+                                    '위치 정확도가 낮아 대구 시청으로 지도를 업데이트합니다.'
                                 );
                                 location = new naver.maps.LatLng(
-                                    37.5665,
-                                    126.978
-                                ); // 서울 시청 좌표
+                                    35.8714,
+                                    128.6014
+                                );
                             }
 
                             const mapOptions = {
@@ -72,9 +72,9 @@ function MapComponent() {
                             alert('현재 위치를 가져올 수 없습니다.');
                         },
                         {
-                            enableHighAccuracy: true, // 높은 정확도 요청
-                            maximumAge: 30000, // 캐시된 위치 허용 시간
-                            timeout: 27000, // 위치 탐색 제한 시간
+                            enableHighAccuracy: true,
+                            maximumAge: 30000,
+                            timeout: 27000,
                         }
                     );
                 } else {
@@ -86,22 +86,19 @@ function MapComponent() {
         };
 
         if (window.naver && window.naver.maps) {
-            initMap(); // 네이버 지도 API 로드된 후 지도 초기화
+            initMap();
         } else {
             const timer = setInterval(() => {
                 if (window.naver && window.naver.maps) {
                     clearInterval(timer);
                     initMap();
                 }
-            }, 100); // 네이버 지도 API가 로드되면 초기화
+            }, 100);
         }
     }, []);
 
     return (
-        <div
-            ref={mapContainer}
-            style={{ width: '100%', height: '100%' }} // 지도 크기 설정
-        ></div>
+        <div ref={mapContainer} style={{ width: '100%', height: '100%' }}></div>
     );
 }
 

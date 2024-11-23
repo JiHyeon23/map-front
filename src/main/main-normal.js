@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './main-normal.css';
 
 import MapComponent from './MapComponent';
-import ButtonSection from './ButtonSectionNormal';
+import ButtonSectionNormal from './ButtonSectionNormal';
+import ButtonSectionFemale from './ButtonSectionFemale';
+import ButtonSectionNoin from './ButtonSectionNoin';
 import OverlapGroup from './OverlapGroupNormal';
 
 import mapSpicy from '../img/mapspicy.png';
@@ -13,6 +15,9 @@ function App() {
     const [isOpen, setIsOpen] = useState(false);
     const [top, setTop] = useState('calc(100% - 50px)');
     const [height, setHeight] = useState('57px');
+
+    // 사용자 선택 상태 추가
+    const [selectedUser, setSelectedUser] = useState('male');
 
     const toggleHeight = () => {
         if (isOpen) {
@@ -25,6 +30,11 @@ function App() {
         setIsOpen(!isOpen);
     };
 
+    // 사용자 선택 처리
+    const handleUserChange = (user) => {
+        setSelectedUser(user);
+    };
+
     return (
         <div className="element">
             <div className="div">
@@ -34,7 +44,10 @@ function App() {
                             <MapComponent />
                         </div>
                     </div>
-                    <ButtonSection />
+                    {/* 사용자 상태에 따라 ButtonSection 변경 */}
+                    {selectedUser === 'male' && <ButtonSectionNormal />}
+                    {selectedUser === 'female' && <ButtonSectionFemale />}
+                    {selectedUser === 'wheelchair' && <ButtonSectionNoin />}
                     <div
                         className="overlap-wrapper"
                         style={{
@@ -43,7 +56,10 @@ function App() {
                             transition: 'top 0.3s ease, height 0.3s ease',
                         }}
                     >
-                        <OverlapGroup toggleHeight={toggleHeight} />
+                        <OverlapGroup
+                            toggleHeight={toggleHeight}
+                            onUserChange={handleUserChange} // 사용자 변경 이벤트 전달
+                        />
                     </div>
                 </div>
                 <div className="view-3">
