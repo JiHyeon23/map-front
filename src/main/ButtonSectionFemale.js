@@ -4,8 +4,10 @@ import gong4 from '../img/gong4.png';
 import store from '../img/store.png';
 import oneonenine from '../img/oneonenine.png';
 import police from '../img/police.png';
+import cctv from '../img/cctv.png';
+import siren from '../img/siren.png';
 
-const ButtonSectionNormal = () => {
+const ButtonSectionFemale = () => {
     const [activeButton, setActiveButton] = useState(null);
 
     const scrollContainerRef = useRef(null);
@@ -57,35 +59,67 @@ const ButtonSectionNormal = () => {
                 userSelect: 'none',
             }}
         >
-            <div className="frame-2">
+            <button
+                className="button-wrapper-6"
+                style={{
+                    backgroundColor:
+                        activeButton === 'cctv' ? '#FFE2A4' : '#ffffff',
+                }}
+                onClick={() => handleButtonClick('cctv')}
+            >
+                <img className="img" src={cctv} alt="CCTV 이미지" />
+                <span className="text-wrapper-cctv">CCTV</span>
+            </button>
+
+            <button
+                className="button-wrapper-7-girl"
+                style={{
+                    backgroundColor:
+                        activeButton === 'siren' ? '#FFE2A4' : '#ffffff',
+                }}
+                onClick={() => handleButtonClick('siren')}
+            >
+                <img className="img-3-girl" src={siren} alt="비상벨 이미지" />
+                <span className="text-wrapper-6-siren">안전 비상벨</span>
+            </button>
+
+            <div className="frame-2-girl">
                 <button
-                    className="button-wrapper"
+                    className="button-wrapper-girl"
                     style={{
                         backgroundColor:
                             activeButton === 'gong4' ? '#FFE2A4' : '#ffffff',
                     }}
                     onClick={() => handleButtonClick('gong4')}
                 >
-                    <img className="img" src={gong4} alt="공사 현장 이미지" />
-                    <span className="text-wrapper">공사 현장</span>
+                    <img
+                        className="img-girl"
+                        src={gong4}
+                        alt="공사 현장 이미지"
+                    />
+                    <span className="text-wrapper-girl">공사 현장</span>
                 </button>
             </div>
-            <div className="frame-3">
+            <div className="frame-3-girl">
                 <button
-                    className="button-wrapper-2"
+                    className="button-wrapper-2-girl"
                     style={{
                         backgroundColor:
                             activeButton === 'store' ? '#FFE2A4' : '#ffffff',
                     }}
                     onClick={() => handleButtonClick('store')}
                 >
-                    <img className="image-2" src={store} alt="편의점 이미지" />
-                    <span className="text-wrapper">편의점</span>
+                    <img
+                        className="image-2-girl"
+                        src={store}
+                        alt="편의점 이미지"
+                    />
+                    <span className="text-wrapper-girl">편의점</span>
                 </button>
             </div>
-            <div className="frame-4">
+            <div className="frame-4-girl">
                 <button
-                    className="button-wrapper-3"
+                    className="button-wrapper-3-girl"
                     style={{
                         backgroundColor:
                             activeButton === 'oneonenine'
@@ -95,38 +129,42 @@ const ButtonSectionNormal = () => {
                     onClick={() => handleButtonClick('oneonenine')}
                 >
                     <img
-                        className="img-2"
+                        className="img-2-girl"
                         src={oneonenine}
                         alt="소방 시설 이미지"
                     />
-                    <span className="text-wrapper">소방 시설</span>
+                    <span className="text-wrapper-girl">소방 시설</span>
                 </button>
             </div>
-            <div className="frame-5">
+            <div className="frame-5-girl">
                 <button
-                    className="button-wrapper-4"
+                    className="button-wrapper-4-girl"
                     style={{
                         backgroundColor:
                             activeButton === 'police' ? '#FFE2A4' : '#ffffff',
                     }}
                     onClick={() => handleButtonClick('police')}
                 >
-                    <img className="img" src={police} alt="경찰서 이미지" />
-                    <span className="text-wrapper">경찰서</span>
+                    <img
+                        className="img-girl"
+                        src={police}
+                        alt="경찰서 이미지"
+                    />
+                    <span className="text-wrapper-girl">경찰서</span>
                 </button>
             </div>
             <button
-                className="button-wrapper-5"
+                className="button-wrapper-5-girl"
                 style={{
                     backgroundColor:
                         activeButton === 'crime' ? '#FFE2A4' : '#ffffff',
                 }}
                 onClick={() => handleButtonClick('crime')}
             >
-                <span className="text-wrapper-4">범죄 주의 구간</span>
+                <span className="text-wrapper-4-girl">범죄 주의 구간</span>
             </button>
         </div>
     );
 };
 
-export default ButtonSectionNormal;
+export default ButtonSectionFemale;

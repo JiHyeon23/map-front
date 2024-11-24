@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import './main-normal.css';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 import MapComponent from './MapComponent';
-import ButtonSection from './ButtonSectionNormal';
+import ButtonSectionNormal from './ButtonSectionNormal';
+import ButtonSectionFemale from './ButtonSectionFemale';
+import ButtonSectionNoin from './ButtonSectionNoin';
 import OverlapGroup from './OverlapGroupNormal';
+import Search from '../directions/search';
 
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
 
-function App() {
-    const [isOpen, setIsOpen] = useState(false);
+function App() { 
+    const navigate = useNavigate(); //Search 페이지로 이동
+    const [isOpen, setIsOpen] = useState(false); 
     const [top, setTop] = useState('calc(100% - 50px)');
     const [height, setHeight] = useState('57px');
+
+    const [selectedUser, setSelectedUser] = useState('male');
 
     const toggleHeight = () => {
         if (isOpen) {
@@ -25,6 +32,10 @@ function App() {
         setIsOpen(!isOpen);
     };
 
+    const handleUserChange = (user) => {
+        setSelectedUser(user);
+    };
+
     return (
         <div className="element">
             <div className="div">
@@ -34,7 +45,9 @@ function App() {
                             <MapComponent />
                         </div>
                     </div>
-                    <ButtonSection />
+                    {selectedUser === 'male' && <ButtonSectionNormal />}
+                    {selectedUser === 'female' && <ButtonSectionFemale />}
+                    {selectedUser === 'wheelchair' && <ButtonSectionNoin />}
                     <div
                         className="overlap-wrapper"
                         style={{
@@ -43,7 +56,7 @@ function App() {
                             transition: 'top 0.3s ease, height 0.3s ease',
                         }}
                     >
-                        <OverlapGroup toggleHeight={toggleHeight} />
+                        <OverlapGroup toggleHeight={toggleHeight} onUserChange={handleUserChange}/>
                     </div>
                 </div>
                 <div className="view-3">
@@ -57,14 +70,14 @@ function App() {
                             alt="map spicy 로고"
                         />
                     </div>
-                    <button className="view-4">
-                        <img
-                            className="image-5"
-                            src={mike}
-                            alt="마이크 아이콘"
-                        />
-                        <div className="text-wrapper-12">장소, 주소 검색</div>
-                    </button>
+                        <button className="view-4" onClick={() => navigate('/search')}>
+                            <img
+                                className="image-5"
+                                src={mike}
+                                alt="마이크 아이콘"
+                            />
+                            <div className="text-wrapper-12">장소, 주소 검색</div>
+                        </button>
                     <img className="menu" src={menu} alt="메뉴 아이콘" />
                 </div>
             </div>
@@ -72,4 +85,16 @@ function App() {
     );
 }
 
-export default App;
+//Search 페이지로 이동 
+function path_Search() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/search" element={<Search />} />
+            </Routes>
+        </Router>
+    );
+}
+
+export default path_Search;
