@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+//지도 컴포넌트
+
 function MapComponent() {
     const mapContainer = useRef(null);
     const mapInstance = useRef(null);
