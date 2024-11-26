@@ -5,6 +5,8 @@ import store from '../img/store.png';
 import oneonenine from '../img/oneonenine.png';
 import police from '../img/police.png';
 
+//일반 노말 카테고리
+
 const ButtonSectionNormal = () => {
     const [activeButton, setActiveButton] = useState(null);
 

@@ -9,6 +9,8 @@ import noin from '../img/noin.png';
 import drugstore from '../img/drugstore.png';
 import ele from '../img/ele.png';
 
+//노약자 카테고리
+
 const ButtonSectionNoin = () => {
     const [activeButton, setActiveButton] = useState(null);
 

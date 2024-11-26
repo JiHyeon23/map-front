@@ -18,6 +18,8 @@ import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
 
+//메인 화면
+
 function App() {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
