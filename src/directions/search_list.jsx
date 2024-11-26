@@ -1,3 +1,4 @@
+//검색 기록
 import React from "react";
 import "./search.css";
 

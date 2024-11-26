@@ -1,3 +1,4 @@
+//검색 페이지
 import React, { useState } from "react";  
 import "./search.css";
 import Directions_list from "./search_list";
