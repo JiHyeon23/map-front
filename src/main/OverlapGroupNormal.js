@@ -7,6 +7,8 @@ import humanMaleW from '../img/human-male-white.svg';
 import humanMaleY from '../img/human-male-yellow.svg';
 import pull from '../img/pull.svg';
 
+//하단 끌어올리는 부분
+
 const OverlapGroupNormal = ({ toggleHeight, onUserChange }) => {
     const [selectedUser, setSelectedUser] = useState('male');
     const [safetyLevel, setSafetyLevel] = useState('안전 단계 최저');
@@ -105,7 +107,7 @@ const OverlapGroupNormal = ({ toggleHeight, onUserChange }) => {
                                         ? humanMaleW
                                         : humanMaleY
                                 }
-                                alt="남성 사용자"
+                                alt="일반 사용자"
                             />
                         </button>
                     </div>
