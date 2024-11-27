@@ -13,6 +13,7 @@ import ButtonSectionFemale from './ButtonSectionFemale';
 import ButtonSectionNoin from './ButtonSectionNoin';
 import OverlapGroup from './OverlapGroupNormal';
 import Search from '../directions/search';
+import FindWayBus from '../findwaybus/findwaybus';
 
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
@@ -20,7 +21,7 @@ import menu from '../img/menu.svg';
 
 //메인 화면
 
-function App() {
+function Main_normal() {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [top, setTop] = useState('calc(100% - 50px)');
@@ -99,16 +100,16 @@ function App() {
     );
 }
 
-//Search 페이지로 이동
-function path_Search() {
+function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<Main_normal />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/findwaybus" element={<FindWayBus />} />
             </Routes>
         </Router>
     );
 }
 
-export default path_Search;
+export default App;

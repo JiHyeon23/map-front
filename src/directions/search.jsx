@@ -43,11 +43,6 @@ export const Search = () => {
     setData(data.filter((_, i) => i !== index));
   };
 
-  // 기록 클릭 시 FindWayBus 페이지로 이동
-  const handleRecordClick = () => {
-    navigate("/findwaybus"); // 페이지 이동
-  };
-
   return (
     <div className="screen">
       <div className="overlap-wrapper">
@@ -79,7 +74,7 @@ export const Search = () => {
           <Directions_list 
             data={data} 
             onRemove={handleRemoveData} 
-            onClick={handleRecordClick} // 기록 클릭 시 처리하는 함수
+            onClick={() => navigate('/findwaybus')}
           />
         </div>
       </div>

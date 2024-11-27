@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './findwaybus_styleguide.css';
 import './findwaybus_style.css';
-import over from './findwaybus_frame';
 
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
@@ -157,7 +156,6 @@ function FindWayBus() {
                     </div>
                 </div>
             </div>
-            <findwaybus_frame/>
         </div>
     );
 }
