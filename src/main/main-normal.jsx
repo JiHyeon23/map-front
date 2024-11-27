@@ -48,9 +48,10 @@ function App() {
             <div className="div">
                 <div className="overlap">
                     <div className="frame">
+                        {/* 
                         <div style={{ width: '100%', height: '100vh' }}>
                             <MapComponent />
-                        </div>
+                        </div>*/}
                     </div>
                     {selectedUser === 'male' && <ButtonSectionNormal />}
                     {selectedUser === 'female' && <ButtonSectionFemale />}

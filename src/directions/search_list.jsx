@@ -1,13 +1,11 @@
-//검색 기록
 import React from "react";
 import "./search.css";
-
 import x from '../img/x.svg';
 import place from '../img/place.svg';
 import clock from '../img/clock.svg';
 
 function Directions_list(props) {
-  const { data, onRemove } = props;
+  const { data, onRemove, onClick } = props; // onClick 추가
 
   return (
     <div className="directions-list-wrapper">
@@ -28,7 +26,13 @@ function Directions_list(props) {
                 onClick={() => onRemove(index)} 
                 style={{ cursor: 'pointer' }}
               />
-              <div className="text-wrapper-3">{item.location}</div>
+              <div 
+                className="text-wrapper-3"
+                onClick={() => onClick(item.location)} // 클릭 시 onClick 호출
+                style={{ cursor: 'pointer' }}
+              >
+                {item.location}
+              </div>
             </>
           ) : item.type === 1 ? (
             <>
@@ -41,7 +45,13 @@ function Directions_list(props) {
                 onClick={() => onRemove(index)} 
                 style={{ cursor: 'pointer' }}
               />
-              <div className="text-wrapper-3">{item.location}</div>
+              <div 
+                className="text-wrapper-3"
+                onClick={() => onClick(item.location)} // 클릭 시 onClick 호출
+                style={{ cursor: 'pointer' }}
+              >
+                {item.location}
+              </div>
             </>
           ) : null}
         </div>
@@ -49,6 +59,5 @@ function Directions_list(props) {
     </div>
   );
 }
-
 
 export default Directions_list;
