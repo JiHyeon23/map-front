@@ -1,31 +1,29 @@
-//검색 페이지
-import React, { useState } from "react";  
-import "./search.css";
-import Directions_list from "./search_list";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // useNavigate 임포트
 
+import Directions_list from "./search_list";
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
 
-//기록  list
 const initialData = [];
 
 export const Search = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState(initialData);
   const [inputValue, setInputValue] = useState("");
-  
-  //길이가 길면 줄이기
+
   const maxLength = 16;
   const displayValue = inputValue.length > maxLength ? inputValue.slice(0, maxLength) + '...' : inputValue;
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  //날자 넣기
   const handleAddData = () => {
     if (inputValue) {
       const newData = {
-        date: `${(new Date().getMonth() + 1).toString().padStart(2, '0')}.${new Date().getDate().toString().padStart(2, '0')}`, 
+        date: `${(new Date().getMonth() + 1).toString().padStart(2, '0')}.${new Date().getDate().toString().padStart(2, '0')}`,
         location: displayValue,
         type: 0
       };
@@ -35,16 +33,19 @@ export const Search = () => {
     }
   };
 
-  //엔터로 입력
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleAddData();
     }
   };
 
-  //data 삭제 함수
   const handleRemoveData = (index) => {
     setData(data.filter((_, i) => i !== index));
+  };
+
+  // 기록 클릭 시 FindWayBus 페이지로 이동
+  const handleRecordClick = () => {
+    navigate("/findwaybus"); // 페이지 이동
   };
 
   return (
@@ -74,7 +75,13 @@ export const Search = () => {
             </div>
           </div>
         </div>
-        <div><Directions_list data={data} onRemove={handleRemoveData} /></div>
+        <div>
+          <Directions_list 
+            data={data} 
+            onRemove={handleRemoveData} 
+            onClick={handleRecordClick} // 기록 클릭 시 처리하는 함수
+          />
+        </div>
       </div>
     </div>
   );

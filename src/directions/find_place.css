@@ -28,11 +28,12 @@
     border-bottom-width: 1px;
     border-color: #dedddd;
     box-shadow: var(--2);
-    height: 560px;
+    height: calc(100vh - 50px);
     left: 0;
     position: absolute;
     top: 0;
     width: 412px;
+    overflow-y: auto; /* 스크롤 컨트롤 */
   }
   
   .screen .map-spicy {

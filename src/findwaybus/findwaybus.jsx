@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './findwaybus_styleguide.css';
 import './findwaybus_style.css';
+import over from './findwaybus_frame';
+
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
 import runningManBlack from '../img/runningmanblack.png';
@@ -12,6 +14,7 @@ import arrowTop from '../img/arrow-top.png';
 import arrowDown from '../img/arrow-down.png';
 
 function FindWayBus() {
+
     const [selected, setSelected] = useState('bus');
 
     useEffect(() => {
@@ -154,6 +157,7 @@ function FindWayBus() {
                     </div>
                 </div>
             </div>
+            <findwaybus_frame/>
         </div>
     );
 }
