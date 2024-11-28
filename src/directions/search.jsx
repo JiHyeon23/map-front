@@ -6,13 +6,18 @@ import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
 
+//검색 기록이 여기에서 list로 저장이 되는거라 지금은 필요 없는 부분 추후에 검색 기록을 만들 때 수정할 것
 const initialData = [];
+
+//목적지 저장
+const destination = [];
 
 export const Search = () => {
   const navigate = useNavigate();
   const [data, setData] = useState(initialData);
   const [inputValue, setInputValue] = useState("");
 
+  //입력창 최대 길이, 넘어가면 ...으로 표시
   const maxLength = 16;
   const displayValue = inputValue.length > maxLength ? inputValue.slice(0, maxLength) + '...' : inputValue;
 
@@ -20,6 +25,7 @@ export const Search = () => {
     setInputValue(e.target.value);
   };
 
+  //적은거 저장
   const handleAddData = () => {
     if (inputValue) {
       const newData = {
@@ -29,13 +35,16 @@ export const Search = () => {
       };
 
       setData([newData, ...data]);
+      destination.push(displayValue);
       setInputValue("");
     }
   };
 
+  //엔터 치면 입력
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleAddData();
+      navigate('/find_place', { state: { destination } }); //엡터 치면 바로 find_place 페이지로 넘어감 + 목적지 저장
     }
   };
 
@@ -55,8 +64,8 @@ export const Search = () => {
             <div className="image-wrapper">
               <img className="image" alt="mapSpicy_logo" src={mapSpicy} />
             </div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group">
+            <div className="overlap-group-wrapper-s">
+              <div className="overlap-group-s">
                 <input
                   className="search-input"
                   placeholder="장소, 주소 검색"
@@ -64,8 +73,8 @@ export const Search = () => {
                   onChange={handleInputChange}
                   onKeyDown={handleKeyDown}
                 />
-                <img className="image-1" alt="마이크" src={mike} />
-                <div className="view-2" />
+                <img className="image-1-s" alt="마이크" src={mike} />
+                <div className="view-2-s" />
               </div>
             </div>
           </div>
@@ -74,7 +83,7 @@ export const Search = () => {
           <Directions_list 
             data={data} 
             onRemove={handleRemoveData} 
-            onClick={() => navigate('/findwaybus')}
+            onClick={() => navigate('/find_place')}
           />
         </div>
       </div>

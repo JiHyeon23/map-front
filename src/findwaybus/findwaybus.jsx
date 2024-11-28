@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 import './findwaybus_styleguide.css';
 import './findwaybus_style.css';
 
@@ -13,15 +16,21 @@ import arrowTop from '../img/arrow-top.png';
 import arrowDown from '../img/arrow-down.png';
 
 function FindWayBus() {
-
+    const navigate = useNavigate();
+    const location = useLocation();
     const [selected, setSelected] = useState('bus');
+    const [destination, setDestination] = useState('');
 
     useEffect(() => {
         const savedSelected = localStorage.getItem('selected');
         if (savedSelected) {
             setSelected(savedSelected);
         }
-    }, []);
+
+        if (location.state && location.state.destination) {
+            setDestination(location.state.destination); // 목적지 설정
+        }
+    }, [location]);
 
     const handleBusClick = () => {
         if (selected !== 'bus') {
@@ -91,11 +100,7 @@ function FindWayBus() {
                             </div>
                             <img
                                 className="motion-sensor clickable"
-                                src={
-                                    selected === 'walking'
-                                        ? runningManYellow
-                                        : runningManBlack
-                                }
+                                src={selected === 'walking' ? runningManYellow : runningManBlack}
                                 alt="Running Man Icon"
                                 style={{ cursor: 'pointer' }}
                                 onClick={handleWalkingClick}
@@ -104,7 +109,7 @@ function FindWayBus() {
                     </div>
                 </div>
 
-                <div className="text-wrapper-3">도착지를 입력해주세요</div>
+                <div className="text-wrapper-3">출발지를 입력해주세요</div>
                 <div className="view-2">
                     <div className="map-spicy">
                         <div className="text-wrapper-4">MapSpicy</div>
@@ -129,6 +134,7 @@ function FindWayBus() {
                             type="text"
                             placeholder="출발지를 입력해주세요"
                             className="input-field"
+                            /*onClick={() => navigate('/search')} */  // 클릭 시 navigate로 페이지 이동
                         />
                     </div>
                     <div className="frame-2">
@@ -136,6 +142,8 @@ function FindWayBus() {
                             type="text"
                             placeholder="도착지를 입력해주세요"
                             className="input-field"
+                            value={destination} // 목적지 입력값
+                            onChange={(e) => setDestination(e.target.value)} // 목적지 변경 시 처리
                         />
                     </div>
                     <div className="frame-3"></div>

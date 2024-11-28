@@ -1,4 +1,5 @@
-//검색 후 지도에서 장소 위치와 장소 목록 부분 
+//보류 ~~~ 쓸지 안 쓸지 나도 몰라요
+//도착지 저장 후 출발지 선택하는 부분 
 import React, { useState } from "react";  
 import "./find_again.css";
 import Find_place_list from "./find_again_list";

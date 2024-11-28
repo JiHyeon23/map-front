@@ -4,7 +4,7 @@ import "./find_place";
 import art from '../img/arrow-right-top.svg';
 
 function Find_place_list(props) {
-  const { data } = props;  // 여러 항목을 받음
+  const { data, navigate } = props;
 
   return (
     <div className="place-list-wrapper">
@@ -21,7 +21,7 @@ function Find_place_list(props) {
               </div>
               <p>{addr}</p>
               <p>{km}</p>
-              <button className="artbox">
+              <button className="artbox" onClick={() => navigate('/findwaybus', { state: { destination: name } })}>
               <img className="arrow-icon" alt="art" src={art} />
               <div className="text-artbox"> 길찾기 </div>
             </button>

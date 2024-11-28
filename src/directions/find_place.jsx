@@ -1,8 +1,11 @@
 //검색 후 지도에서 장소 위치와 장소 목록 부분 
-import React, { useState } from "react";  
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./find_place.css";
 import Find_place_list from "./find_place_list";
 import MapComponent from "../main/MapComponent";
+import Search from "../directions/search";
 
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
@@ -18,6 +21,10 @@ const place_list = [
 ];
 
 export const Find_place = () => {
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const [inputValue, setInputValue] = useState(state?.destination || "");
+
   const [name, setName] = useState(place_list[0]);
   const [purpose, setPurpose] = useState(place_list[1]);
   const [addr, setAddr] = useState(place_list[2]);
@@ -28,43 +35,55 @@ export const Find_place = () => {
     setIsClicked(!isClicked);
   };
 
+  //목적지 input에 두기
+  useEffect(() => {
+    if (state?.destination) {
+      setInputValue(state.destination); // destination 값이 있을 경우 input에 설정
+    }
+  }, [state?.destination]);
+
   return (
     <div className="screen">
       <div className="overlap-wrapper">
-        
-        <div className="overlap">
+        <div className="overlap-11">
           <div className="view">
             <div className="map-spicy">
               <div className="text-wrapper">map spicy</div>
             </div>
             <img className="menu" alt="메뉴 아이콘" src={menu} />
+            <img 
+              className="img-x" 
+              onClick={() => navigate('/search')} 
+              alt="x" 
+              src={x} 
+            />
             <div className="image-wrapper">
               <img className="image" alt="mapSpicy_logo" src={mapSpicy} />
             </div>
             
-            <button className="overlap-group-wrapper-1" onClick={handleClick}>
+            <button className="overlap-group-wrapper-111" onClick={handleClick}>
                 <img 
-                  className="image-3" 
+                  className="image-two" 
                   alt={isClicked ? "map" : "sangsaelist"} 
                   src={isClicked ? map : sangsaelist } />
-                <div className="text-wrapper-1"> {isClicked ? "지도" : "목록"} </div>
+                <div className="text-wrapper-11"> {isClicked ? "지도" : "목록"} </div>
             </button> 
             <div className="line"></div>
-            <div className="overlap-group-wrapper">
-              
-              <div className="overlap-group">
+            <div className="overlap-group-wrapper-f">
+              <div className="overlap-group-f">
                 <input
                   className="search-input"
                   placeholder="장소, 주소 검색"
+                  value={inputValue} // input 값 설정
+                  onChange={(e) => setInputValue(e.target.value)}
                 />
                 <img className="image-1" alt="마이크" src={mike} />
                 <div className="view-2" />
               </div>
             </div>
-            <img className="image-2" alt="x" src={x} />
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> 
       <div>
       {isClicked ? (
         <>
@@ -74,7 +93,10 @@ export const Find_place = () => {
             </div>
           </div>
         </>
-      ) : <Find_place_list data={place_list} />}
+      ) : <Find_place_list 
+            data={place_list} 
+            navigate={navigate}
+            />}
         </div>
       </div>
   );

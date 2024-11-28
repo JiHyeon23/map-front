@@ -12,12 +12,16 @@ import ButtonSectionNormal from './ButtonSectionNormal';
 import ButtonSectionFemale from './ButtonSectionFemale';
 import ButtonSectionNoin from './ButtonSectionNoin';
 import OverlapGroup from './OverlapGroupNormal';
-import Search from '../directions/search';
-import FindWayBus from '../findwaybus/findwaybus';
 
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
+
+//페이지 이동 관련 import
+import Search from '../directions/search';
+import FindWayBus from '../findwaybus/findwaybus';
+import Find_place from '../directions/find_place';
+import Find_again from '../findwaybus/find_again';
 
 //메인 화면
 
@@ -100,6 +104,7 @@ function Main_normal() {
     );
 }
 
+//페이지 이동 * 되도록 건들이지 마세요 *
 function App() {
     return (
         <Router>
@@ -107,6 +112,8 @@ function App() {
                 <Route path="/" element={<Main_normal />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/findwaybus" element={<FindWayBus />} />
+                <Route path="/find_place" element={<Find_place />} />
+                <Route path="/find_again" element={<Find_again />} />
             </Routes>
         </Router>
     );

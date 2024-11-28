@@ -16,7 +16,7 @@
     position: relative;
   }
   
-  .overlap {
+  .overlap-11 {
     position: relative;
     width: 412px;
     height: 10px;
@@ -58,7 +58,7 @@
     white-space: nowrap;
   }
 
-  .screen .text-wrapper-1 {
+  .screen .text-wrapper-11 {
     position: absolute;
     color: #000000;
     font-family: "Kumbh Sans-Regular", Helvetica;
@@ -75,27 +75,18 @@
     width: 35px;
   }
   
-  .screen .image {
-    height: 35px;
-    left: 2px;
-    object-fit: cover;
-    position: absolute;
-    top: 4px;
-    width: 35px;
-  }
-  
-  .screen .overlap-group-wrapper {
+  .screen .overlap-group-wrapper-f {
     background-color: #ebebeb;
     border-radius: 10px;
     height: 38px;
-    left: 95px;
+    left: 100px !important;
     overflow: hidden;
     position: absolute;
     top: 49px;
-    width: 273px;
+    width: 273px !important;
   }
 
-  .screen .overlap-group-wrapper-1 {
+  .screen .overlap-group-wrapper-111 {
     background-color: #ffffff;
     border-radius: 10px;
     height: 38px;
@@ -107,7 +98,7 @@
     border: 1.5px solid #FFB10C;
   }
   
-  .screen .overlap-group {
+  .screen .overlap-group-f {
     height: 35px;
     left: 3px;
     position: relative;
@@ -130,20 +121,18 @@
     margin-right: 43px; 
   }
 
-  .screen .image-2 {
+  .img-x {
+    position: absolute;
     width: 17px; 
     height: 17px;
     top: 60px;
-    left: 381px;
-    margin-right:px;
+    left: 385px;
   }
 
-  .screen .image-3 {
-    width: -23px; 
-    height: 30px;
-    left: 4px;
-    top: 3px;
-    margin-right:px; 
+  .image-two {
+    position: relative;
+    top: 2.5px;
+    left: -17px;
   }
   
   .screen .search-input {
@@ -162,8 +151,6 @@
     height: 35px;
     left: 0;
     position: absolute;
-    top: 0;
-    width: 300px;
   }
   
   .menu {

@@ -5,22 +5,22 @@ import place from '../img/place.svg';
 import clock from '../img/clock.svg';
 
 function Directions_list(props) {
-  const { data, onRemove, onClick } = props; // onClick 추가
+  const { data, onRemove, onClick } = props;
 
   return (
-    <div className="directions-list-wrapper">
+    <div className="directions-list-wrapper-s">
       {data.map((item, index) => (
         <div 
           key={index} 
-          className="element-2" 
+          className="element-2-s" 
           style={{"--index": index}}
         >
           {item.type === 0 ? (
             <>
-              <img className="image-3" alt="place" src={place} />
-              <div className="text-wrapper-2">{item.date}</div>
+              <img className="image-3-s" alt="place" src={place} />
+              <div className="text-wrapper-2-s">{item.date}</div>
               <img 
-                className="image-2" 
+                className="image-2-s" 
                 alt="x" 
                 src={x} 
                 onClick={() => onRemove(index)} 
@@ -28,7 +28,7 @@ function Directions_list(props) {
               />
               <div 
                 className="text-wrapper-3"
-                onClick={() => onClick(item.location)} // 클릭 시 onClick 호출
+                onClick={() => onClick(item.location)}
                 style={{ cursor: 'pointer' }}
               >
                 {item.location}
@@ -36,10 +36,10 @@ function Directions_list(props) {
             </>
           ) : item.type === 1 ? (
             <>
-              <img className="image-4" alt="clock" src={clock} />
-              <div className="text-wrapper-2">{item.date}</div>
+              <img className="image-4-s" alt="clock" src={clock} />
+              <div className="text-wrapper-2-s">{item.date}</div>
               <img 
-                className="image-2" 
+                className="image-3-s" 
                 alt="x" 
                 src={x} 
                 onClick={() => onRemove(index)} 
@@ -47,7 +47,7 @@ function Directions_list(props) {
               />
               <div 
                 className="text-wrapper-3"
-                onClick={() => onClick(item.location)} // 클릭 시 onClick 호출
+                onClick={() => onClick(item.location)}
                 style={{ cursor: 'pointer' }}
               >
                 {item.location}
