@@ -5,11 +5,11 @@ import "../cssdesign/warning_style.css";
 
 export const Warning = () => {
   return (
-    <div className="screen">
-      <div className="div">
-        <img className="image" alt="Image" src={image} />
+    <div className="warning_screen">
+      <div className="warning_div">
+        <img className="warning_image" alt="Image" src={image} />
 
-        <p className="text-wrapper">
+        <p className="warning_text-wrapper">
           이 경로는 일부 구간에서 치안이 <br />
           불안정할 수 있습니다. 주의하시기 바랍니다.
         </p>

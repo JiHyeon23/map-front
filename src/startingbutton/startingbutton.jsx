@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../cssdesign/startingbutton_style.css";
+import Startingbuttonfinish from '../startingbutton/startingbutonfinish.jsx';
 
 // 이미지 import
 import vectorImg from "../img/x.svg";
@@ -39,42 +40,42 @@ function Startingbutton() {
   }, []); // 빈 배열을 넣으면 컴포넌트가 처음 로드될 때만 실행됨
 
   return (
-    <div className="div-wrapper">
-      <div className="div">
-        <div className="overlap">
+    <div className="startingbutton_div-wrapper">
+      <div className="startingbutton_div">
+        <div className="startingbutton_overlap">
           {/* 첫 번째 섹션 */}
-          <div className="frame">
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group">
+          <div className="startingbutton_frame">
+            <div className="startingbutton_overlap-group-wrapper">
+              <div className="startingbutton_overlap-group">
                 {/* 내용 없음 */}
               </div>
             </div>
           </div>
           {/* 두 번째 섹션 */}
-          <div className="view">
-            <div className="overlap-2">
-              <div className="frame-2">
+          <div className="startingbutton_view">
+            <div className="startingbutton_overlap-2">
+              <div className="startingbutton_frame-2">
                 <input
                   type="text"
-                  className="text-wrapper"
+                  className="startingbutton_text-wrapper"
                   value={input1}
                   onChange={(e) => setInput1(e.target.value)}
                   placeholder="출발지를 입력해주세요"
                 />
               </div>
-              <div className="frame-3">
+              <div className="startingbutton_frame-3">
                 <input
                   type="text"
-                  className="text-wrapper-2"
+                  className="startingbutton_text-wrapper-2"
                   value={input2}
                   onChange={(e) => setInput2(e.target.value)}
                   placeholder="도착지를 입력해주세요"
                 />
               </div>
-              <img className="arrow-left" src={arrowLeft} alt="Arrow Left" />
+              <img className="startingbutton_arrow-left" src={arrowLeft} alt="Arrow Left" />
             </div>
             <img
-              className="vector"
+              className="startingbutton_vector"
               src={vectorImg}
               alt="Vector"
               onClick={clearInputs} // 클릭 이벤트 연결
@@ -91,15 +92,17 @@ function Startingbutton() {
         )}
 
         {/* 세 번째 섹션 */}
-        <div className="view-2">
-          <div className="map-spicy">
-            <div className="text-wrapper-3">map spicy</div>
+        <div className="startingbutton_view-2">
+          <div className="startingbutton_map-spicy">
+            <div className="startingbutton_text-wrapper-3">map spicy</div>
           </div>
-          <div className="image-wrapper">
-            <img className="image" src={image35} alt="Map Image" />
+          <div className="startingbutton_image-wrapper">
+            <img className="startingbutton_image" src={image35} alt="Map Image" />
           </div>
-          <img className="menu" src={menuIcon} alt="Menu" />
+          <img className="startingbutton_menu" src={menuIcon} alt="Menu" />
         </div>
+        <Startingbuttonfinish />
+
       </div>
     </div>
   );

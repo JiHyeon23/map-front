@@ -1,0 +1,46 @@
+.two-div-wrapper_fol .two-div_fol {
+    overflow: hidden;
+    width: 412px;
+    height: 560px;
+    position: relative;
+    top: 570px; /* 아래로 50px 이동 */
+}
+
+.two-div-wrapper_fol .two-view-3_fol {
+    position: absolute;
+    width: 412px;
+    height: 50px;
+    top: 43px;
+    left: 0;
+    background-color: #ffb10c; /* 배경색 지정 */
+    overflow: hidden;
+    border-bottom-width: 0.5px;
+    border-bottom-style: solid;
+    border-color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-div-wrapper_fol .two-motion-sensor_fol {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 150px; /* 왼쪽에 위치 */
+}
+
+.two-div-wrapper_fol .two-text-wrapper-2_fol {
+    color: #000000;
+    font-size: 16px;
+    position: absolute;
+    height: 20px;
+    font-family: 'Roboto-Regular', Helvetica;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    white-space: nowrap;
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬 보정 */
+    cursor: pointer;
+    bottom: 20px; /* 하단에 고정 */
+}
