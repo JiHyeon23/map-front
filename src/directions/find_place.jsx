@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import "./find_place.css";
+import "../cssdesign/find_place.css";
 import Find_place_list from "./find_place_list";
 import MapComponent from "../main/MapComponent";
 import Search from "../directions/search";
@@ -23,7 +23,7 @@ const place_list = [
 export const Find_place = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const [inputValue, setInputValue] = useState(state?.destination || "");
+  const [inputValue, setInputValue] = useState(state?.destination || ""); //목적지 받음 
 
   const [name, setName] = useState(place_list[0]);
   const [purpose, setPurpose] = useState(place_list[1]);
@@ -74,7 +74,7 @@ export const Find_place = () => {
                 <input
                   className="search-input"
                   placeholder="장소, 주소 검색"
-                  value={inputValue} // input 값 설정
+                  value={inputValue} // input 값 설정 - 목적지가 들어감
                   onChange={(e) => setInputValue(e.target.value)}
                 />
                 <img className="image-1" alt="마이크" src={mike} />

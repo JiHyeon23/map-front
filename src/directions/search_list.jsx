@@ -1,5 +1,5 @@
 import React from "react";
-import "./search.css";
+import "../cssdesign/search.css";
 import x from '../img/x.svg';
 import place from '../img/place.svg';
 import clock from '../img/clock.svg';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './main-normal.css';
+import '../cssdesign/main-normal.css';
 import {
     BrowserRouter as Router,
     Routes,

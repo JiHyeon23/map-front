@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate 임포트
 
+import "../cssdesign/search.css";
 import Directions_list from "./search_list";
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
@@ -25,7 +26,7 @@ export const Search = () => {
     setInputValue(e.target.value);
   };
 
-  //적은거 저장
+  //적은걸 search_list.jsx를 호출하여 검색기록 페이지를 불러냄 지금은 기록 부분이 보이지 않지만 없애면 안됨
   const handleAddData = () => {
     if (inputValue) {
       const newData = {

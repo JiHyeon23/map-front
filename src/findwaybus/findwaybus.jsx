@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-import './findwaybus_styleguide.css';
-import './findwaybus_style.css';
+import '../cssdesign/findwaybus_style.css';
 
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
