@@ -1,7 +1,7 @@
+// Warning.jsx
 import React from "react";
 import image from "../img/warning.png";
-import "./warning_style.css";
-import "./warning_styleguide.css";
+import "../cssdesign/warning_style.css";
 
 export const Warning = () => {
   return (
