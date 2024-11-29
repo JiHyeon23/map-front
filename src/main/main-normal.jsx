@@ -22,6 +22,8 @@ import Search from '../directions/search';
 import FindWayBus from '../findwaybus/findwaybus';
 import Find_place from '../directions/find_place';
 import Find_again from '../findwaybus/find_again';
+import Startingbutton from '../startingbutton/startingbutton';
+import Search_again from '../directions/search_again';
 
 //메인 화면
 
@@ -110,9 +112,13 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Main_normal />} />
+                <Route path="/Main_normal" element={<Main_normal />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/findwaybus" element={<FindWayBus />} />
                 <Route path="/find_place" element={<Find_place />} />
+                <Route path="/find_again" element={<Find_again />} />
+                <Route path="/startingbutton" element={<Startingbutton />} />
+                <Route path="/search_again" element={<Search_again />} />
                 <Route path="/find_again" element={<Find_again />} />
             </Routes>
         </Router>

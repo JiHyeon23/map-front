@@ -10,10 +10,10 @@ import menu from '../img/menu.svg';
 //검색 기록이 여기에서 list로 저장이 되는거라 지금은 필요 없는 부분 추후에 검색 기록을 만들 때 수정할 것
 const initialData = [];
 
-//목적지 저장
-const destination = [];
+//출발지 저장
+const startpoint = [];
 
-export const Search = () => {
+export const Search_again = () => {
   const navigate = useNavigate();
   const [data, setData] = useState(initialData);
   const [inputValue, setInputValue] = useState("");
@@ -36,7 +36,7 @@ export const Search = () => {
       };
 
       setData([newData, ...data]);
-      destination.push(displayValue);
+      startpoint.push(displayValue);
       setInputValue("");
     }
   };
@@ -45,7 +45,7 @@ export const Search = () => {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleAddData();
-      navigate('/find_place', { state: { destination } }); //엡터 치면 바로 find_place 페이지로 넘어감 + 목적지 저장
+      navigate('/find_place', { state: { startpoint } }); //엡터 치면 바로 find_place 페이지로 넘어감 + 목적지 저장
     }
   };
 
@@ -92,4 +92,4 @@ export const Search = () => {
   );
 };
 
-export default Search;
+export default Search_again;

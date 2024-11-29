@@ -3,7 +3,7 @@ import React from "react";
 import "../cssdesign/find_place.css"; // 스타일링을 위한 클래스 네임 연결
 import art from '../img/arrow-right-top.svg';
 
-function Find_place_list(props) {
+function Find_place_list_again (props) {
   const { data, navigate } = props;
 
   return (
@@ -21,7 +21,7 @@ function Find_place_list(props) {
               </div>
               <p className="address_find_place">{addr}</p>
               <p className="distance_find_place">{km}</p>
-              <button className="artbox_find_place" onClick={() => navigate('/findwaybus', { state: { destination: name } })}>
+              <button className="artbox_find_place" onClick={() => navigate('/findwaybus', { state: { startpoint: name } })}>
                 <img className="arrow-icon_find_place" alt="길찾기 아이콘" src={art} />
                 <div className="text-artbox_find_place">길찾기</div>
               </button>
@@ -33,4 +33,4 @@ function Find_place_list(props) {
   );
 }
 
-export default Find_place_list;
+export default Find_place_list_again ;

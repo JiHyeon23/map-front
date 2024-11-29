@@ -1,3 +1,5 @@
+//출발지 검색 버스 도보 없는 페이지
+//현재 안 씁니다.
 import React, { useState } from "react";
 import "../cssdesign/searchlocation_style.css";
 

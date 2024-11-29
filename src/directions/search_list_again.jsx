@@ -5,7 +5,7 @@ import x from '../img/x.svg';
 import place from '../img/place.svg';
 import clock from '../img/clock.svg';
 
-function Directions_list(props) {
+function Directions_list_again (props) {
   const { data, onRemove, onClick } = props;
 
   return (
@@ -61,4 +61,4 @@ function Directions_list(props) {
   );
 }
 
-export default Directions_list;
+export default Directions_list_again ;

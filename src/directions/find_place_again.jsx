@@ -20,7 +20,7 @@ const place_list = [
   { name: '다이소 대구 어쩌구점', purpose: '생활용품', addr: '대구 달서구 계대정문로 25-1', km: '1.2km' }
 ];
 
-export const Find_place = () => {
+export const Find_place_again = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
   const [inputValue, setInputValue] = useState(""); //목적지 받음 
@@ -33,10 +33,10 @@ export const Find_place = () => {
 
   //목적지 input에 두기
   useEffect(() => {
-    if (state?.destination) {
-      setInputValue(state.destination); // destination 값이 있을 경우 input에 설정
+    if (state?.startpoint) {
+      setInputValue(state.startpoint); // destination 값이 있을 경우 input에 설정
     }
-  }, [state?.destination]);
+  }, [state?.startpoint]);
 
   return (
     <div className="screen_find_place">
@@ -86,7 +86,7 @@ export const Find_place = () => {
             <MapComponent className="map-component_find_place" />
           </div>
         ) : (
-          <Find_place_list 
+          <Find_place_list_again 
             data={place_list} 
             navigate={navigate}
           />
@@ -96,4 +96,4 @@ export const Find_place = () => {
   );
 };
 
-export default Find_place;
+export default Find_place_again ;

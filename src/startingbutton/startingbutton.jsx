@@ -1,4 +1,6 @@
+//도보 따라가기 페이지
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "../cssdesign/startingbutton_style.css";
 import Startingbuttonfinish from '../startingbutton/startingbutonfinish.jsx';
 
@@ -10,15 +12,10 @@ import menuIcon from "../img/menu.svg";
 import Warning from "./warning"; // 경고 컴포넌트 import
 
 function Startingbutton() {
+  const navigate = useNavigate();
   // 입력창의 값을 상태로 관리
   const [input1, setInput1] = useState("다이소 대구 신당점");
   const [input2, setInput2] = useState("대구 달서구 신당동 183");
-
-  // 초기화 함수
-  const clearInputs = () => {
-    setInput1("");
-    setInput2("");
-  };
 
   // 경고 표시 여부 상태
   const [isWarningVisible, setWarningVisible] = useState(false);
@@ -78,7 +75,7 @@ function Startingbutton() {
               className="startingbutton_vector"
               src={vectorImg}
               alt="Vector"
-              onClick={clearInputs} // 클릭 이벤트 연결
+              onClick={() => navigate("/Main_normal")} // 클릭 이벤트 연결
               style={{ cursor: "pointer" }} // 클릭 가능하도록 스타일 추가
             />
           </div>
@@ -87,7 +84,7 @@ function Startingbutton() {
         {/* 경고 팝업 (클릭 시 사라짐) */}
         {isWarningVisible && (
           <div onClick={hideWarning}> {/* 클릭 시 경고 숨기기 */}
-            <Warning />
+            {/*<Warning />*/}
           </div>
         )}
 

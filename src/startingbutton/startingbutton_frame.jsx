@@ -1,3 +1,4 @@
+//상세경로 - 제외
 import React, { useState, useEffect } from 'react';
 import '../cssdesign/startingbutton_frame_style.css';
 
@@ -19,9 +20,9 @@ export const Startingbutton_frame = () => {
   const [spacing, setSpacing] = useState("default-spacing"); // 동적 간격 클래스
 
   useEffect(() => {
-    const clientId = "mcd4dyhjzk";
-    const clientSecret = "U9CDL557LU5KQym1qRXgSfMNaGKYDPNnlf1J2Dxm";
-    const url = `https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving?start=126.9780,37.5665&goal=126.9769,37.5700&option=pedestrian`;
+    const clientId = "";
+    const clientSecret = "";
+    const url = ``;
 
     fetch(url, {
       headers: {

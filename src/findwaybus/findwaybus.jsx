@@ -19,19 +19,14 @@ function FindWayBus() {
     const navigate = useNavigate();
     const location = useLocation();
     const [selected, setSelected] = useState('bus');
-    const [departure, setDeparture] = useState(''); // 출발지 상태
-    const [destination, setDestination] = useState('');
+    const [departure, setDeparture] = useState(location.state?.startpoint || ''); // 출발지 상태
+    const [destination, setDestination] = useState(location.state?.destination || ''); // 목적지 상태
 
     useEffect(() => {
-        const savedSelected = localStorage.getItem('selected');
-        if (savedSelected) {
-            setSelected(savedSelected);
-        }
-
-        if (location.state && location.state.destination) {
-            setDestination(location.state.destination); // 목적지 설정
-        }
-    }, [location]);
+        console.log('Departure:', departure); // 상태 값 확인
+        console.log('Destination:', destination); // 상태 값 확인
+    }, [departure, destination]);
+    
 
     const handleBusClick = () => {
         if (selected !== 'bus') {
@@ -49,10 +44,8 @@ function FindWayBus() {
 
     // 출발지와 도착지를 교환하는 함수
     const swapInputValues = () => {
-        setDeparture((prevDeparture) => {
-            setDestination(prevDeparture); // 출발지를 도착지로 설정
-            return destination; // 도착지를 출발지로 설정
-        });
+        setDeparture(destination); // 목적지를 출발지로 설정
+        setDestination(departure); // 출발지를 목적지로 설정
     };
 
     return (
@@ -82,7 +75,6 @@ function FindWayBus() {
                             src={selected === 'bus' ? busYellow : busBlack}
                             alt="Bus Icon"
                             style={{ cursor: 'pointer' }}
-                            onClick={handleBusClick}
                         />
                     </div>
 
@@ -111,11 +103,7 @@ function FindWayBus() {
 
                             <img
                                 className="motion-sensor_bus clickable_bus"
-                                src={
-                                    selected === 'walking'
-                                        ? runningManYellow
-                                        : runningManBlack
-                                }
+                                src={selected === 'walking' ? runningManYellow : runningManBlack}
                                 alt="Running Man Icon"
                                 style={{ cursor: 'pointer' }}
                                 onClick={handleWalkingClick}
@@ -129,11 +117,7 @@ function FindWayBus() {
                         <div className="text-wrapper-4_bus">MapSpicy</div>
                     </div>
                     <div className="image-wrapper_bus">
-                        <img
-                            className="image_bus"
-                            src={mapSpicy}
-                            alt="Map Image"
-                        />
+                        <img className="image_bus" src={mapSpicy} alt="Map Image" />
                     </div>
                     <img
                         className="menu_bus clickable_bus"
@@ -145,12 +129,14 @@ function FindWayBus() {
                 <div className="view-3_bus">
                     <div
                         className="frame-clikable_bus"
-                        onClick={() => console.log('Navigate to Bus Page!')}
+                        onClick={() => navigate('/search_again')}
                     >
                         <input
                             type="text"
                             placeholder="출발지를 입력해주세요"
                             className="input-field_bus"
+                            value={departure} // 출발지에 상태 값 표시
+                            onChange={(e) => setDeparture(e.target.value)} // 출발지 값 변경
                         />
                     </div>
 
@@ -159,8 +145,8 @@ function FindWayBus() {
                             type="text"
                             placeholder="도착지를 입력해주세요"
                             className="input-field_bus"
-                            value={destination}
-                            onChange={(e) => setDestination(e.target.value)}
+                            value={destination} // 도착지에 상태 값 표시
+                            onChange={(e) => setDestination(e.target.value)} // 도착지 값 변경
                         />
                     </div>
 
@@ -179,7 +165,7 @@ function FindWayBus() {
                             className="arrow-left-2_bus"
                             src={arrowDown}
                             alt="Arrow Down Icon"
-                            onClick={swapInputValues}
+                            onClick={swapInputValues} // 출발지와 목적지 교환
                         />
                     </div>
                 </div>

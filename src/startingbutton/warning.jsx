@@ -1,4 +1,4 @@
-// Warning.jsx
+// 경고 
 import React from "react";
 import image from "../img/warning.png";
 import "../cssdesign/warning_style.css";
