@@ -21,7 +21,7 @@ export const Startingbutton_frame = () => {
   useEffect(() => {
     const clientId = "mcd4dyhjzk";
     const clientSecret = "U9CDL557LU5KQym1qRXgSfMNaGKYDPNnlf1J2Dxm";
-    const url = ``; //api 자리
+    const url = `https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving?start=126.9780,37.5665&goal=126.9769,37.5700&option=pedestrian`;
 
     fetch(url, {
       headers: {

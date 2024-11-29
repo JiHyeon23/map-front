@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import '../cssdesign/findwaybus_style.css';
+import Findwaybus_frame from '../findwaybus/findwaybus_frame';
 
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
@@ -13,11 +14,13 @@ import menuIcon from '../img/menu.svg';
 import xIcon from '../img/x.svg';
 import arrowTop from '../img/arrow-top.png';
 import arrowDown from '../img/arrow-down.png';
+import white_x from '../img/white_x.png';
 
 function FindWayBus() {
     const navigate = useNavigate();
     const location = useLocation();
     const [selected, setSelected] = useState('bus');
+    const [departure, setDeparture] = useState(''); // 출발지 상태
     const [destination, setDestination] = useState('');
 
     useEffect(() => {
@@ -45,12 +48,21 @@ function FindWayBus() {
         }
     };
 
+    // 출발지와 도착지를 교환하는 함수
+    const swapInputValues = () => {
+        setDeparture((prevDeparture) => {
+            setDestination(prevDeparture); // 출발지를 도착지로 설정
+            return destination; // 도착지를 출발지로 설정
+        });
+    };
+
     return (
         <div className="div-wrapper">
             <div className="div">
                 <div className="stop-edge">
                     <div
                         className="view"
+                        //onClick={handleBusClick} //버스 클릭
                         style={{
                             borderBottomWidth: '1px',
                             borderBottomStyle: 'solid',
@@ -78,6 +90,7 @@ function FindWayBus() {
 
                     <div
                         className="overlap-group-wrapper"
+                        onClick={handleWalkingClick}
                         style={{
                             borderBottomWidth: '1px',
                             borderBottomStyle: 'solid',
@@ -97,6 +110,7 @@ function FindWayBus() {
                             >
                                 도보
                             </div>
+                            
                             <img
                                 className="motion-sensor clickable"
                                 src={selected === 'walking' ? runningManYellow : runningManBlack}
@@ -125,8 +139,9 @@ function FindWayBus() {
                 </div>
 
                 <div className="view-3">
+                    
                     <div
-                        className="frame clickable"
+                        className="frame-lickable"
                         onClick={() => console.log('Navigate to Bus Page!')}
                     >
                         <input
@@ -135,7 +150,13 @@ function FindWayBus() {
                             className="input-field"
                             /*onClick={() => navigate('/search')} */  // 클릭 시 navigate로 페이지 이동
                         />
+                        <img
+                            className="input-icon"
+                            src={white_x}
+                            alt="Departure Icon"
+                        />
                     </div>
+                    
                     <div className="frame-2">
                         <input
                             type="text"
@@ -144,11 +165,17 @@ function FindWayBus() {
                             value={destination} // 목적지 입력값
                             onChange={(e) => setDestination(e.target.value)} // 목적지 변경 시 처리
                         />
+                        <img
+                            className="input-icon"
+                            src={white_x}
+                            alt="Destination Icon"
+                        />
                     </div>
                     <div className="frame-3"></div>
                     <div className="overlap">
                         <img className="group" src={xIcon} alt="X Icon" />
                     </div>
+                    
                     <div className="overlap-2">
                         <img
                             className="arrow-left"
@@ -159,9 +186,13 @@ function FindWayBus() {
                             className="arrow-left-2"
                             src={arrowDown}
                             alt="Arrow Down Icon"
+                            onClick={swapInputValues} // 클릭 시 값 교환
                         />
+                        
                     </div>
+                    
                 </div>
+
             </div>
         </div>
     );

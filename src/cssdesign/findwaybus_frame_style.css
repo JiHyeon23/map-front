@@ -336,18 +336,3 @@
   width: 20px;
   height: 20px;
 }
-
-.div-wrapper .vector_bus clickable_bus {
-  position: absolute;
-  width: 344px;
-  height: 37px;
-  top: 10px;
-  left: 49px;
-  background-color: var(--x-4-sca-ly);
-  border-radius: 10px 10px 0px 0px;
-  overflow: hidden;
-  border-top-width: 0.5px;
-  border-top-style: solid;
-  border-color: #e9e9e9;
-
-}
