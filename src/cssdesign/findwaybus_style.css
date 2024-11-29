@@ -10,7 +10,7 @@
     background-color: var(--x);
     overflow: hidden;
     width: 412px;
-    height: 560px;
+    height: 660px;
     position: relative;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .div-wrapper_bus .text-wrapper-3_bus {
-    top: 476px;
+    top: 400px;
     left: 129px;
     color: #646363;
     font-size: 16px;
@@ -216,7 +216,7 @@
     position: absolute;
     width: 344px; /* 입력 칸의 너비 */
     height: 37px; /* 높이 */
-    top: 6px; /* 부모 요소 기준으로 상단 배치 */
+    top: 10px; /* 부모 요소 기준으로 상단 배치 */
     left: 49px; /* 왼쪽 여백 */
     background-color: var(--x-4-sca-ly); /* 배경색 */
     border-radius: 10px 10px 0px 0px; /* 둥근 모서리 */

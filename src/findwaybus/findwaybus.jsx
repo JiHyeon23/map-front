@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 import '../cssdesign/findwaybus_style.css';
-//import Findwaybus_frame from '../findwaybus/findwaybus_frame';
+import Findwaybus_frame from '../findwaybus/findwaybus_frame';
 
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
@@ -123,7 +123,6 @@ function FindWayBus() {
                         </div>
                     </div>
                 </div>
-
                 <div className="text-wrapper-3_bus">출발지를 입력해주세요</div>
                 <div className="view-2_bus">
                     <div className="map-spicy_bus">
@@ -143,7 +142,6 @@ function FindWayBus() {
                         onClick={() => console.log('Menu icon clicked!')}
                     />
                 </div>
-
                 <div className="view-3_bus">
                     <div
                         className="frame-clikable_bus"
@@ -185,6 +183,7 @@ function FindWayBus() {
                         />
                     </div>
                 </div>
+                <Findwaybus_frame />
             </div>
         </div>
     );
