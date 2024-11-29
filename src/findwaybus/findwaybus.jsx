@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import '../cssdesign/findwaybus_style.css';
-import Findwaybus_frame from '../findwaybus/findwaybus_frame';
+//import Findwaybus_frame from '../findwaybus/findwaybus_frame';
 
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
@@ -14,7 +14,6 @@ import menuIcon from '../img/menu.svg';
 import xIcon from '../img/x.svg';
 import arrowTop from '../img/arrow-top.png';
 import arrowDown from '../img/arrow-down.png';
-import white_x from '../img/white_x.png';
 
 function FindWayBus() {
     const navigate = useNavigate();
@@ -57,12 +56,11 @@ function FindWayBus() {
     };
 
     return (
-        <div className="div-wrapper">
-            <div className="div">
-                <div className="stop-edge">
+        <div className="div-wrapper_bus">
+            <div className="div_bus">
+                <div className="stop-edge_bus">
                     <div
-                        className="view"
-                        //onClick={handleBusClick} //버스 클릭
+                        className="view_bus"
                         style={{
                             borderBottomWidth: '1px',
                             borderBottomStyle: 'solid',
@@ -71,7 +69,7 @@ function FindWayBus() {
                         }}
                     >
                         <div
-                            className="text-wrapper"
+                            className="text-wrapper_bus"
                             style={{
                                 color:
                                     selected === 'bus' ? '#ffb10c' : '#000000',
@@ -80,7 +78,7 @@ function FindWayBus() {
                             버스
                         </div>
                         <img
-                            className="vector clickable"
+                            className="vector_bus clickable_bus"
                             src={selected === 'bus' ? busYellow : busBlack}
                             alt="Bus Icon"
                             style={{ cursor: 'pointer' }}
@@ -89,7 +87,7 @@ function FindWayBus() {
                     </div>
 
                     <div
-                        className="overlap-group-wrapper"
+                        className="overlap-group-wrapper_bus"
                         onClick={handleWalkingClick}
                         style={{
                             borderBottomWidth: '1px',
@@ -98,9 +96,9 @@ function FindWayBus() {
                                 selected === 'walking' ? '#666666' : '#d1d1d1',
                         }}
                     >
-                        <div className="overlap-group">
+                        <div className="overlap-group_bus">
                             <div
-                                className="text-wrapper-2"
+                                className="text-wrapper-2_bus"
                                 style={{
                                     color:
                                         selected === 'walking'
@@ -110,10 +108,14 @@ function FindWayBus() {
                             >
                                 도보
                             </div>
-                            
+
                             <img
-                                className="motion-sensor clickable"
-                                src={selected === 'walking' ? runningManYellow : runningManBlack}
+                                className="motion-sensor_bus clickable_bus"
+                                src={
+                                    selected === 'walking'
+                                        ? runningManYellow
+                                        : runningManBlack
+                                }
                                 alt="Running Man Icon"
                                 style={{ cursor: 'pointer' }}
                                 onClick={handleWalkingClick}
@@ -122,77 +124,67 @@ function FindWayBus() {
                     </div>
                 </div>
 
-                <div className="text-wrapper-3">출발지를 입력해주세요</div>
-                <div className="view-2">
-                    <div className="map-spicy">
-                        <div className="text-wrapper-4">MapSpicy</div>
+                <div className="text-wrapper-3_bus">출발지를 입력해주세요</div>
+                <div className="view-2_bus">
+                    <div className="map-spicy_bus">
+                        <div className="text-wrapper-4_bus">MapSpicy</div>
                     </div>
-                    <div className="image-wrapper">
-                        <img className="image" src={mapSpicy} alt="Map Image" />
+                    <div className="image-wrapper_bus">
+                        <img
+                            className="image_bus"
+                            src={mapSpicy}
+                            alt="Map Image"
+                        />
                     </div>
                     <img
-                        className="menu clickable"
+                        className="menu_bus clickable_bus"
                         src={menuIcon}
                         alt="Menu Icon"
                         onClick={() => console.log('Menu icon clicked!')}
                     />
                 </div>
 
-                <div className="view-3">
-                    
+                <div className="view-3_bus">
                     <div
-                        className="frame-lickable"
+                        className="frame-clikable_bus"
                         onClick={() => console.log('Navigate to Bus Page!')}
                     >
                         <input
                             type="text"
                             placeholder="출발지를 입력해주세요"
-                            className="input-field"
-                            /*onClick={() => navigate('/search')} */  // 클릭 시 navigate로 페이지 이동
-                        />
-                        <img
-                            className="input-icon"
-                            src={white_x}
-                            alt="Departure Icon"
+                            className="input-field_bus"
                         />
                     </div>
-                    
-                    <div className="frame-2">
+
+                    <div className="frame-2_bus">
                         <input
                             type="text"
                             placeholder="도착지를 입력해주세요"
-                            className="input-field"
-                            value={destination} // 목적지 입력값
-                            onChange={(e) => setDestination(e.target.value)} // 목적지 변경 시 처리
-                        />
-                        <img
-                            className="input-icon"
-                            src={white_x}
-                            alt="Destination Icon"
+                            className="input-field_bus"
+                            value={destination}
+                            onChange={(e) => setDestination(e.target.value)}
                         />
                     </div>
-                    <div className="frame-3"></div>
-                    <div className="overlap">
-                        <img className="group" src={xIcon} alt="X Icon" />
+
+                    <div className="frame-3_bus"></div>
+                    <div className="overlap_bus">
+                        <img className="group_bus" src={xIcon} alt="X Icon" />
                     </div>
-                    
-                    <div className="overlap-2">
+
+                    <div className="overlap-2_bus">
                         <img
-                            className="arrow-left"
+                            className="arrow-left_bus"
                             src={arrowTop}
                             alt="Arrow Up Icon"
                         />
                         <img
-                            className="arrow-left-2"
+                            className="arrow-left-2_bus"
                             src={arrowDown}
                             alt="Arrow Down Icon"
-                            onClick={swapInputValues} // 클릭 시 값 교환
+                            onClick={swapInputValues}
                         />
-                        
                     </div>
-                    
                 </div>
-
             </div>
         </div>
     );
