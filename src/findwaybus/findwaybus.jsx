@@ -18,15 +18,18 @@ import arrowDown from '../img/arrow-down.png';
 function FindWayBus() {
     const navigate = useNavigate();
     const location = useLocation();
-    const [selected, setSelected] = useState('bus');
+    const [selected, setSelected] = useState('walking');
     const [departure, setDeparture] = useState(location.state?.startpoint || ''); // 출발지 상태
-    const [destination, setDestination] = useState(location.state?.destination || ''); // 목적지 상태
+    const [destination, setDestination] = useState(localStorage.getItem('destination') || location.state?.destination || ''); // 목적지 상태
+
+    const handleClick = () => {
+        navigate("/Main_normal");  // "Main_normal" 페이지로 이동
+    };
 
     useEffect(() => {
         console.log('Departure:', departure); // 상태 값 확인
         console.log('Destination:', destination); // 상태 값 확인
     }, [departure, destination]);
-    
 
     const handleBusClick = () => {
         if (selected !== 'bus') {
@@ -42,10 +45,15 @@ function FindWayBus() {
         }
     };
 
-    // 출발지와 도착지를 교환하는 함수
     const swapInputValues = () => {
         setDeparture(destination); // 목적지를 출발지로 설정
         setDestination(departure); // 출발지를 목적지로 설정
+    };
+
+    const handleFindWay = () => {
+        // 목적지 값 localStorage에 저장
+        localStorage.setItem('destination', destination); // destination을 저장
+        navigate('/search_again');
     };
 
     return (
@@ -129,7 +137,7 @@ function FindWayBus() {
                 <div className="view-3_bus">
                     <div
                         className="frame-clikable_bus"
-                        onClick={() => navigate('/search_again')}
+                        onClick={handleFindWay} // 목적지 값을 저장하고 navigate 호출
                     >
                         <input
                             type="text"
@@ -152,7 +160,7 @@ function FindWayBus() {
 
                     <div className="frame-3_bus"></div>
                     <div className="overlap_bus">
-                        <img className="group_bus" src={xIcon} alt="X Icon" />
+                        <img className="group_bus" src={xIcon} alt="X Icon" onClick={handleClick}/>
                     </div>
 
                     <div className="overlap-2_bus">
@@ -169,7 +177,7 @@ function FindWayBus() {
                         />
                     </div>
                 </div>
-                <Findwaybus_frame />
+                {departure && destination && <Findwaybus_frame />} {/* 출발지와 목적지에 값이 있을 떄만 따라가기 버튼이 있음*/}
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../cssdesign/main-normal.css';
 import {
     BrowserRouter as Router,
@@ -24,10 +24,13 @@ import Find_place from '../directions/find_place';
 import Find_again from '../findwaybus/find_again';
 import Startingbutton from '../startingbutton/startingbutton';
 import Search_again from '../directions/search_again';
+import Find_place_again from '../directions/find_place_again';
 
 //메인 화면
 
 function Main_normal() {
+    localStorage.clear(); //findwaybus 목적지 리셋
+
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const [top, setTop] = useState('calc(100% - 50px)');
@@ -119,7 +122,7 @@ function App() {
                 <Route path="/find_again" element={<Find_again />} />
                 <Route path="/startingbutton" element={<Startingbutton />} />
                 <Route path="/search_again" element={<Search_again />} />
-                <Route path="/find_again" element={<Find_again />} />
+                <Route path="/find_place_again" element={< Find_place_again />} />
             </Routes>
         </Router>
     );

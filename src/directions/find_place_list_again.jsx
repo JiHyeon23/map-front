@@ -1,10 +1,9 @@
-//검색 후 길찾기의 밑에 나오는 저장된 리스트 함수
 import React from "react";
 import "../cssdesign/find_place.css"; // 스타일링을 위한 클래스 네임 연결
 import art from '../img/arrow-right-top.svg';
 
-function Find_place_list_again (props) {
-  const { data, navigate } = props;
+function Find_place_list_again(props) {
+  const { data, navigate, destination } = props; // destination 값을 props로 받음
 
   return (
     <div className="place-list-wrapper_find_place">
@@ -21,7 +20,7 @@ function Find_place_list_again (props) {
               </div>
               <p className="address_find_place">{addr}</p>
               <p className="distance_find_place">{km}</p>
-              <button className="artbox_find_place" onClick={() => navigate('/findwaybus', { state: { startpoint: name } })}>
+              <button className="artbox_find_place" onClick={() => navigate('/findwaybus', { state: { startpoint: name, destination: destination } })}>
                 <img className="arrow-icon_find_place" alt="길찾기 아이콘" src={art} />
                 <div className="text-artbox_find_place">길찾기</div>
               </button>
@@ -33,4 +32,4 @@ function Find_place_list_again (props) {
   );
 }
 
-export default Find_place_list_again ;
+export default Find_place_list_again;

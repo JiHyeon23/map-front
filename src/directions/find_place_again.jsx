@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "../cssdesign/find_place.css";
-import Find_place_list from "./find_place_list";
+import Find_place_list_again from "./find_place_list_again";
 import MapComponent from "../main/MapComponent";
-import Search from "../directions/search";
+import Search_again from "../directions/search_again";
 
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
@@ -33,10 +33,11 @@ export const Find_place_again = () => {
 
   //목적지 input에 두기
   useEffect(() => {
-    if (state?.startpoint) {
-      setInputValue(state.startpoint); // destination 값이 있을 경우 input에 설정
+    if (state?.destination && Array.isArray(state.destination)) {
+      // destination 배열이 있을 경우 마지막 항목만 inputValue에 설정
+      setInputValue(state.destination[state.destination.length - 1]);
     }
-  }, [state?.startpoint]);
+  }, [state?.destination]);
 
   return (
     <div className="screen_find_place">

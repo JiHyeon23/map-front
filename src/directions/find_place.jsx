@@ -33,8 +33,9 @@ export const Find_place = () => {
 
   //목적지 input에 두기
   useEffect(() => {
-    if (state?.destination) {
-      setInputValue(state.destination); // destination 값이 있을 경우 input에 설정
+    if (state?.destination && Array.isArray(state.destination)) {
+      // destination 배열이 있을 경우 마지막 항목만 inputValue에 설정
+      setInputValue(state.destination[state.destination.length - 1]);
     }
   }, [state?.destination]);
 
@@ -49,7 +50,7 @@ export const Find_place = () => {
             <img className="menu_find_place" alt="메뉴 아이콘" src={menu} />
             <img 
               className="img-x_find_place" 
-              onClick={() => navigate('/search')} 
+              onClick={() => navigate('/Main_normal')} 
               alt="x" 
               src={x} 
             />

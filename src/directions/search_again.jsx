@@ -45,7 +45,7 @@ export const Search_again = () => {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleAddData();
-      navigate('/find_place', { state: { startpoint } }); //엡터 치면 바로 find_place 페이지로 넘어감 + 목적지 저장
+      navigate('/find_place_again', { state: { startpoint } }); 
     }
   };
 
@@ -84,7 +84,7 @@ export const Search_again = () => {
           <Directions_list 
             data={data} 
             onRemove={handleRemoveData} 
-            onClick={() => navigate('/find_place')}
+            onClick={() => navigate('/find_place_again')}
           />
         </div>
       </div>
