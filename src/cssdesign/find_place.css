@@ -1,183 +1,182 @@
 /*검색 후 지도에서 장소 위치와 장소 목록 부분에 대한 css*/
-.screen {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-  }
-  
-  .screen .overlap-wrapper {
-    background-color: var(--x);
-    height: 560px;
-    overflow: hidden;
-    width: 412px;
-    position: relative;
-  }
-  
-  .overlap-11 {
-    position: relative;
-    width: 412px;
-    height: 10px;
-  }
-  
-  .screen .view {
-    background-color: #ffffff;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-color: #dedddd;
-    box-shadow: var(--2);
-    height: calc(100vh - 50px);
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 412px;
-    overflow-y: auto; /* 스크롤 컨트롤 */
-  }
-  
-  .screen .map-spicy {
-    height: 20px;
-    left: 45px;
-    position: absolute;
-    top: 16px;
-    width: 73px;
-  }
-  
-  .screen .text-wrapper {
-    color: #000000;
-    font-family: "Kumbh Sans-Regular", Helvetica;
-    font-size: 15px;
-    font-weight: 400;
-    height: 20px;
-    left: 0;
-    letter-spacing: 0.25px;
-    line-height: 20px;
-    position: absolute;
-    top: -1px;
-    white-space: nowrap;
-  }
+.screen_find_place {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
 
-  .screen .text-wrapper-11 {
-    position: absolute;
-    color: #000000;
-    font-family: "Kumbh Sans-Regular", Helvetica;
-    font-size: 16px;
-    left: 35px;
-    top: 5.4px;
-  }
-  
-  .screen .image-wrapper {
-    height: 35px;
-    left: 8px;
-    position: absolute;
-    top: 3px;
-    width: 35px;
-  }
-  
-  .screen .overlap-group-wrapper-f {
-    background-color: #ebebeb;
-    border-radius: 10px;
-    height: 38px;
-    left: 100px !important;
-    overflow: hidden;
-    position: absolute;
-    top: 49px;
-    width: 273px !important;
-  }
+.screen_find_place .overlap-wrapper_find_place {
+  background-color: var(--x);
+  height: 560px;
+  overflow: hidden;
+  width: 412px;
+  position: relative;
+}
 
-  .screen .overlap-group-wrapper-111 {
-    background-color: #ffffff;
-    border-radius: 10px;
-    height: 38px;
-    left: 10px;
-    overflow: hidden;
-    position: absolute;
-    top: 49px;
-    width: 74px;
-    border: 1.5px solid #FFB10C;
-  }
-  
-  .screen .overlap-group-f {
-    height: 35px;
-    left: 3px;
-    position: relative;
-    top: 1px;
-    width: 295px;
-    display: flex;
-    align-items: center; 
-    padding: 0 10px; 
-  }
-  
-  .screen .overlap-group-1 {
-    background-color: #FFB10C;
-    height: 412px;
-    left: 100px; 
-  }
+.overlap-11_find_place {
+  position: relative;
+  width: 412px;
+  height: 10px;
+}
 
-  .screen .image-1 {
-    width: 29px; 
-    height: 27px;
-    margin-right: 43px; 
-  }
+.screen_find_place .view_find_place {
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #dedddd;
+  box-shadow: var(--2);
+  height: calc(100vh - 50px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 412px;
+  overflow-y: auto; /* 스크롤 컨트롤 */
+}
 
-  .img-x {
-    position: absolute;
-    width: 17px; 
-    height: 17px;
-    top: 60px;
-    left: 385px;
-  }
+.screen_find_place .map-spicy_find_place {
+  height: 20px;
+  left: 45px;
+  position: absolute;
+  top: 16px;
+  width: 73px;
+}
 
-  .image-two {
-    position: relative;
-    top: 2.5px;
-    left: -17px;
-  }
-  
-  .screen .search-input {
-    border: none;
-    outline: none;
-    background: transparent;
-    flex: 1; 
-    font-size: 16px;
-    height: 100%; 
-    padding: 5px 5px 0;
-    z-index: 3;
-  }
+.screen_find_place .text-wrapper_find_place {
+  color: #000000;
+  font-family: "Kumbh Sans-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  height: 20px;
+  left: 0;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+}
 
-  .screen .view-2 {
-    border: none;
-    height: 35px;
-    left: 0;
-    position: absolute;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 12px;
-    left: 362px;
-  }
+.screen_find_place .text-wrapper-11_find_place {
+  position: absolute;
+  color: #000000;
+  font-family: "Kumbh Sans-Regular", Helvetica;
+  font-size: 16px;
+  left: 35px;
+  top: 5.4px;
+}
 
-  .line {
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(to bottom, #dedddd, rgba(0, 0, 0, 0));
-    margin: 100px 0;
+.screen_find_place .image-wrapper_find_place {
+  height: 35px;
+  left: 8px;
+  position: absolute;
+  top: 3px;
+  width: 35px;
+}
+
+.screen_find_place .overlap-group-wrapper-f_find_place {
+  background-color: #ebebeb;
+  border-radius: 10px;
+  height: 38px;
+  left: 100px !important;
+  overflow: hidden;
+  position: absolute;
+  top: 49px;
+  width: 273px !important;
+}
+
+.screen_find_place .overlap-group-wrapper-111_find_place {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 38px;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 49px;
+  width: 74px;
+  border: 1.5px solid #FFB10C;
+}
+
+.screen_find_place .overlap-group-f_find_place {
+  height: 35px;
+  left: 3px;
+  position: relative;
+  top: 1px;
+  width: 295px;
+  display: flex;
+  align-items: center; 
+  padding: 0 10px; 
+}
+
+.screen_find_place .overlap-group-1_find_place {
+  background-color: #FFB10C;
+  height: 412px;
+  left: 100px; 
+}
+
+.screen_find_place .image-1_find_place {
+  width: 29px; 
+  height: 27px;
+  margin-right: 43px; 
+}
+
+.img-x_find_place {
+  position: absolute;
+  width: 17px; 
+  height: 17px;
+  top: 60px;
+  left: 385px;
+}
+
+.image-two_find_place {
+  position: relative;
+  top: 2.5px;
+  left: -17px;
+}
+
+.screen_find_place .search-input_find_place {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1; 
+  font-size: 16px;
+  height: 100%; 
+  padding: 5px 5px 0;
+  z-index: 3;
+}
+
+.screen_find_place .view-2_find_place {
+  border: none;
+  height: 35px;
+  left: 0;
+  position: absolute;
+}
+
+.menu_find_place {
+  position: absolute;
+  top: 12px;
+  left: 362px;
+}
+
+.line_find_place {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to bottom, #dedddd, rgba(0, 0, 0, 0));
+  margin: 100px 0;
 }
 
 /*여기서부터 find_place_list의 css*/
-.place-list {
+.place-list_find_place {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 18px;
   margin: 100px 0;
   border-bottom: 1px solid #dedddd;
-  
 }
 
-.map {
+.map_find_place {
   position: absolute;
   top: 100px; /* 100px 떨어져 있도록 설정 */
   left: 50%; /* 부모의 중앙 */
@@ -187,12 +186,12 @@
   transform: translateX(-50%);
 }
 
-.map .overlap-wrapper {
+.map_find_place .overlap-wrapper_find_place {
   width: 100%;
   height: 100%;
 }
 
-.map-component {
+.map-component_find_place {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -200,7 +199,7 @@
   left: 0;
 }
 
-.screen .place-info {
+.screen_find_place .place-info_find_place {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #cfcfcf;
@@ -211,14 +210,14 @@
   transform: translateX(-50%);
 }
 
-.place-info .header-group {
+.place-info_find_place .header-group_find_place {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
 /*name*/
-.place-info h3 {
+.place-info_find_place h3 {
   position: relative;
   left: 21px;
   font-weight: 650; /*글자 굵기*/
@@ -227,7 +226,7 @@
   top: 4px;
 }
 
-.place-info .purpose {
+.place-info_find_place .purpose_find_place {
   top: 5.5px;
   margin-left: 10px;
   font-size: 14px;
@@ -235,7 +234,7 @@
 }
 
 /*그 외의 것들*/
-.place-info p {
+.place-info_find_place p {
   position: relative;
   left: 21px;
   margin: 2px 0;
@@ -243,7 +242,7 @@
   color: #555555;
 }
 
-.artbox {
+.artbox_find_place {
   background-color: #ffffff;
   border-radius: 10px;
   height: 33px;
@@ -256,14 +255,14 @@
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.arrow-icon {
+.arrow-icon_find_place {
   width: 22px;
   height: 22px;
   margin-left: -48px;
   margin-top: 3px;
 }
 
-.screen .text-artbox {
+.screen_find_place .text-artbox_find_place {
   position: absolute;
   color: #000000;
   font-family: "Kumbh Sans-Regular", Helvetica;

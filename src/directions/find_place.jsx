@@ -1,4 +1,3 @@
-//검색 후 지도에서 장소 위치와 장소 목록 부분 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -25,11 +24,7 @@ export const Find_place = () => {
   const { state } = useLocation();
   const [inputValue, setInputValue] = useState(state?.destination || ""); //목적지 받음 
 
-  const [name, setName] = useState(place_list[0]);
-  const [purpose, setPurpose] = useState(place_list[1]);
-  const [addr, setAddr] = useState(place_list[2]);
-  const [km, setKm] = useState(place_list[3]);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false); // 버튼 클릭 상태
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -43,62 +38,60 @@ export const Find_place = () => {
   }, [state?.destination]);
 
   return (
-    <div className="screen">
-      <div className="overlap-wrapper">
-        <div className="overlap-11">
-          <div className="view">
-            <div className="map-spicy">
-              <div className="text-wrapper">map spicy</div>
+    <div className="screen_find_place">
+      <div className="overlap-wrapper_find_place">
+        <div className="overlap-11_find_place">
+          <div className="view_find_place">
+            <div className="map-spicy_find_place">
+              <div className="text-wrapper_find_place">map spicy</div>
             </div>
-            <img className="menu" alt="메뉴 아이콘" src={menu} />
+            <img className="menu_find_place" alt="메뉴 아이콘" src={menu} />
             <img 
-              className="img-x" 
+              className="img-x_find_place" 
               onClick={() => navigate('/search')} 
               alt="x" 
               src={x} 
             />
-            <div className="image-wrapper">
-              <img className="image" alt="mapSpicy_logo" src={mapSpicy} />
+            <div className="image-wrapper_find_place">
+              <img className="image_find_place" alt="mapSpicy_logo" src={mapSpicy} />
             </div>
             
-            <button className="overlap-group-wrapper-111" onClick={handleClick}>
+            <button className="overlap-group-wrapper-111_find_place" onClick={handleClick}>
                 <img 
-                  className="image-two" 
+                  className="image-two_find_place" 
                   alt={isClicked ? "map" : "sangsaelist"} 
                   src={isClicked ? map : sangsaelist } />
-                <div className="text-wrapper-11"> {isClicked ? "지도" : "목록"} </div>
+                <div className="text-wrapper-11_find_place"> {isClicked ? "지도" : "목록"} </div>
             </button> 
-            <div className="line"></div>
-            <div className="overlap-group-wrapper-f">
-              <div className="overlap-group-f">
+            <div className="line_find_place"></div>
+            <div className="overlap-group-wrapper-f_find_place">
+              <div className="overlap-group-f_find_place">
                 <input
-                  className="search-input"
+                  className="search-input_find_place"
                   placeholder="장소, 주소 검색"
                   value={inputValue} // input 값 설정 - 목적지가 들어감
                   onChange={(e) => setInputValue(e.target.value)}
                 />
-                <img className="image-1" alt="마이크" src={mike} />
-                <div className="view-2" />
+                <img className="image-1_find_place" alt="마이크" src={mike} />
+                <div className="view-2_find_place" />
               </div>
             </div>
           </div>
         </div> 
       </div> 
       <div>
-      {isClicked ? (
-        <>
-          <div className="map">
-            <div className="overlap-wrapper">
-              <MapComponent className="map-component" />
-            </div>
+        {isClicked ? (
+          <div className="map_find_place">
+            <MapComponent className="map-component_find_place" />
           </div>
-        </>
-      ) : <Find_place_list 
+        ) : (
+          <Find_place_list 
             data={place_list} 
             navigate={navigate}
-            />}
-        </div>
+          />
+        )}
       </div>
+    </div>
   );
 };
 
