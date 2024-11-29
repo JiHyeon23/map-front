@@ -7,7 +7,6 @@ import timeIcon from "../img/time.png";
 import line2Svg from "../img/Line 2.svg";
 
 import "./searchlocation_style.css";
-import "./searchlocation_styleguide.css";
 
 export const Searchlocation = () => {
   // 반복되는 데이터를 배열로 정리

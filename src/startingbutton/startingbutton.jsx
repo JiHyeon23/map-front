@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./startingbutton_styleguide.css";
 import "./startingbutton_style.css";
 
 // 이미지 import

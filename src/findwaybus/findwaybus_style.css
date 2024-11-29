@@ -1,3 +1,19 @@
+:root {
+  --zw-cm75: rgba(255, 177, 12, 1);
+  --x: rgba(255, 255, 255, 1);
+  --x-02q-3x-c: rgba(0, 0, 0, 1);
+  --x-4-sca-ly: rgba(255, 255, 255, 1);
+  --AOSP-body-medium-font-family: "Roboto", Helvetica;
+  --AOSP-body-medium-font-weight: 400;
+  --AOSP-body-medium-font-size: 14px;
+  --AOSP-body-medium-letter-spacing: 0.25px;
+  --AOSP-body-medium-line-height: 20px;
+  --AOSP-body-medium-font-style: normal;
+  --1: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  --2: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  --3: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
 .div-wrapper {
     background-color: #ffffff;
     display: flex;
@@ -31,6 +47,7 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-color: #666666;
+    cursor: pointer;
   }
   
   .div-wrapper .text-wrapper {
@@ -72,6 +89,7 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-color: #d1d1d1;
+    cursor: pointer;
   }
   
   .div-wrapper .overlap-group {
@@ -198,37 +216,23 @@
   
   .div-wrapper .frame {
     position: absolute;
-    width: 348px; /* 부모 요소의 너비 */
+    width: 344px; /* 부모 요소의 너비 */
     height: 37px;
     top: 9px;
-    left: 47px;
+    left: 49px;
     background-color: var(--x-4-sca-ly);
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
     border-bottom-width: 0.5px;
     border-bottom-style: solid;
-    border-color: #e9e9e9;
+    border-color: #ffffff;
   }
   
-  .div-wrapper .text-wrapper-5 {
-    position: absolute;
-    top: 8px;
-    left: 14px;
-    color: #7e7e7e;
-    font-size: var(--AOSP-body-medium-font-size);
-    font-family: var(--AOSP-body-medium-font-family);
-    font-weight: var(--AOSP-body-medium-font-weight);
-    letter-spacing: var(--AOSP-body-medium-letter-spacing);
-    line-height: var(--AOSP-body-medium-line-height);
-    white-space: nowrap;
-    font-style: var(--AOSP-body-medium-font-style);
-    width: 100%; /* 부모 요소의 너비에 맞게 입력 필드 확장 */
-  }
   
   .div-wrapper .input-field {
     width: 100%; /* 입력 필드 너비 */
     height: 38px; /* 높이 조정 */
-    padding: 10px;
+    padding: 20px;
     border: none;
     font-size: 13px;
     color: #333;
@@ -251,10 +255,10 @@
 
   .div-wrapper .frame-2 {
     position: absolute;
-    width: 348px;
+    width: 344px;
     height: 37px;
     top: 46px;
-    left: 47px;
+    left: 49px;
     background-color: var(--x-4-sca-ly);
     border-radius: 0px 0px 10px 10px;
     overflow: hidden;
@@ -263,21 +267,6 @@
     border-color: #e9e9e9;
   }
   
-  .div-wrapper .text-wrapper-6 {
-    top: 8px;
-    left: 14px;
-    color: #7e7e7e;
-    font-size: var(--AOSP-body-medium-font-size);
-    position: absolute;
-    height: 20px;
-    font-family: var(--AOSP-body-medium-font-family);
-    font-weight: var(--AOSP-body-medium-font-weight);
-    letter-spacing: var(--AOSP-body-medium-letter-spacing);
-    line-height: var(--AOSP-body-medium-line-height);
-    white-space: nowrap;
-    font-style: var(--AOSP-body-medium-font-style);
-    
-  }
   
   .div-wrapper .frame-3 {
     position: absolute;
@@ -291,7 +280,7 @@
     position: absolute;
     width: 22px;
     height: 21px;
-    top: 14px;
+    top: 17px;
     left: 15px;
   }
   
@@ -314,9 +303,10 @@
   .div-wrapper .overlap-2 {
     position: absolute;
     width: 20px;
-    height: 21px;
+    height: 22px;
     top: 53px;
-    left: 15px;
+    left: 18px;
+    cursor: pointer;
   }
   
   .div-wrapper .arrow-left {
@@ -335,6 +325,42 @@
     left: 8px;
   }
   
+  /* 새로운 input-container 클래스 */
+.div-wrapper .input-container {
+  position: relative; /* 입력 필드와 이미지를 동시에 배치할 수 있게 해줌 */
+}
 
-  
-  
+/* input-field 크기 및 스타일 */
+.div-wrapper .input-field {
+  width: 100%;
+  height: 38px;
+  padding: 10px;
+  padding-right: 30px; /* 오른쪽에 이미지 공간을 확보 */
+  border: none;
+  font-size: 13px;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+/* 오른쪽에 배치할 이미지 스타일 */
+.div-wrapper .input-icon {
+  position: absolute;
+  right: 10px; /* 입력창 오른쪽에 위치 */
+  top: 50%;
+  transform: translateY(-50%); /* 세로 가운데 정렬 */
+  width: 20px; /* 이미지 크기 */
+  height: 20px; /* 이미지 크기 */
+  z-index: 10;
+}
+
+.input-icon {
+  position: relative;  /* 이미지 위치 절대 설정 */
+  right: 10px;          /* 입력창 오른쪽에 배치 */
+  top: 50%;             /* 입력창의 중앙에 배치 */
+  transform: translateY(-50%); /* 수직 중앙 정렬 */
+  z-index: 10;           /* 이미지가 다른 요소 위에 보이도록 설정 */
+  cursor: pointer;      /* 클릭 가능한 커서 설정 */
+}
