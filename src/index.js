@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './main/main-normal.jsx';
 import reportWebVitals from './reportWebVitals';
-
 //import FindWayBus from './findwaybus/findwaybus.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

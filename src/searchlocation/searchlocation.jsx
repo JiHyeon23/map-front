@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./searchlocation_style.css";
+import "../cssdesign/searchlocation_style.css";
 
 // 이미지 import
 import mapspicy from "../img/mapspicy.png";
@@ -41,39 +41,39 @@ const Searchlocation = () => {
   };
 
   return (
-    <div className="div-wrapper">
-      <div className="div">
-        <div className="view">
-          <div className="map-spicy">
-            <div className="text-wrapper">map spicy</div>
+    <div className="div-wrapper_sl">
+      <div className="div_sl">
+        <div className="view_sl">
+          <div className="map-spicy_sl">
+            <div className="text-wrapper_sl">map spicy</div>
           </div>
-          <div className="image-wrapper">
-            <img className="image" alt="Map Spicy" src={mapspicy} />
+          <div className="image-wrapper_sl">
+            <img className="image_sl" alt="Map Spicy" src={mapspicy} />
           </div>
-          <img className="menu" alt="Menu" src={menu} />
+          <img className="menu_sl" alt="Menu" src={menu} />
         </div>
 
-        <div className="view-2">
-          <div className="frame">
+        <div className="view-2_sl">
+          <div className="frame_sl">
             <input
-              className="input-field"
+              className="input-field_sl"
               type="text"
               value={departure}
               onChange={handleDepartureChange}
               placeholder="출발지 입력"
             />
             {/* white_x 클릭 시 출발지 입력 비우기 */}
-            <div className="overlap-group" onClick={clearDeparture}>
-              <img className="whitex" alt="White X" src={whitex} />
+            <div className="overlap-group_sl" onClick={clearDeparture}>
+              <img className="whitex_sl" alt="White X" src={whitex} />
             </div>
           </div>
 
-          <div className="frame-2">
-            <div className="overlap-group" onClick={clearDestination}>
-              <img className="whitex" alt="White X" src={whitex} />
+          <div className="frame-2_sl">
+            <div className="overlap-group_sl" onClick={clearDestination}>
+              <img className="whitex_sl" alt="White X" src={whitex} />
             </div>
             <input
-              className="input-field"
+              className="input-field_sl"
               type="text"
               value={destination}
               onChange={handleDestinationChange}
@@ -81,16 +81,16 @@ const Searchlocation = () => {
             />
           </div>
 
-          <div className="frame-3"></div>
+          <div className="frame-3_sl"></div>
 
-          <div className="overlap">
-            <img className="x" alt="X" src={xImage} />
+          <div className="overlap_sl">
+            <img className="x_sl" alt="X" src={xImage} />
           </div>
 
-          <div className="overlap-2">
+          <div className="overlap-2_sl">
             {/* 화살표 클릭 시 위치 교환 */}
             <img
-              className="arrowupdown"
+              className="arrowupdown_sl"
               alt="Arrow Up Down"
               src={arrowupdown}
               onClick={swapLocations} // 클릭 시 swapLocations 함수 호출
@@ -98,12 +98,12 @@ const Searchlocation = () => {
           </div>
         </div>
 
-        <div className="div-2">
-          <div className="element">
-            <div className="text-wrapper-4">10.27</div>
-            <img className="group-2" alt="X" src={xImage} />
-            <img className="vector-2" alt="Time" src={time} />
-            <div className="text-wrapper-5">대구 달서구 신당동 183</div>
+        <div className="div-2_sl">
+          <div className="element_sl">
+            <div className="text-wrapper-4_sl">10.27</div>
+            <img className="group-2_sl" alt="X" src={xImage} />
+            <img className="vector-2_sl" alt="Time" src={time} />
+            <div className="text-wrapper-5_sl">대구 달서구 신당동 183</div>
           </div>
         </div>
       </div>

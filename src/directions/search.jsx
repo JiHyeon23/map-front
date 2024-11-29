@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate 임포트
-
 import "../cssdesign/search.css";
 import Directions_list from "./search_list";
 import mapSpicy from '../img/mapspicy.png';
@@ -54,28 +53,28 @@ export const Search = () => {
   };
 
   return (
-    <div className="screen">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="view">
-            <div className="map-spicy">
-              <div className="text-wrapper">map spicy</div>
+    <div className="screen_search">
+      <div className="overlap-wrapper_search">
+        <div className="overlap_search">
+          <div className="view_search">
+            <div className="map-spicy_search">
+              <div className="text-wrapper_search">map spicy</div>
             </div>
-            <img className="menu" alt="메뉴 아이콘" src={menu} />
-            <div className="image-wrapper">
-              <img className="image" alt="mapSpicy_logo" src={mapSpicy} />
+            <img className="menu_search" alt="메뉴 아이콘" src={menu} />
+            <div className="image-wrapper_search">
+              <img className="image_search" alt="mapSpicy_logo" src={mapSpicy} />
             </div>
-            <div className="overlap-group-wrapper-s">
-              <div className="overlap-group-s">
+            <div className="overlap-group-wrapper-s_search">
+              <div className="overlap-group-s_search">
                 <input
-                  className="search-input"
+                  className="search-input_search"
                   placeholder="장소, 주소 검색"
                   value={inputValue}
                   onChange={handleInputChange}
                   onKeyDown={handleKeyDown}
                 />
-                <img className="image-1-s" alt="마이크" src={mike} />
-                <div className="view-2-s" />
+                <img className="image-1-s_search" alt="마이크" src={mike} />
+                <div className="view-2-s_search" />
               </div>
             </div>
           </div>
