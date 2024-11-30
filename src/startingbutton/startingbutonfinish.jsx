@@ -7,9 +7,9 @@ import '../cssdesign/startingbuttonfinish_style.css';
 const Startingbuttonfinish = () => {
     const navigate = useNavigate();
 
-    // 클릭 이벤트 핸들러
+    // 길안내 종료를 누르면 "Main_normal" 페이지로 이동
     const handleClick = () => {
-        navigate("/Main_normal");  // "Main_normal" 페이지로 이동
+        navigate("/Main_normal"); 
     };
 
     return (

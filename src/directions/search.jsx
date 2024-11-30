@@ -1,8 +1,12 @@
-//검색
+//출발지 검색 후 길찾기 - 목적지 찾기 뒤에 나오는 것 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // useNavigate 임포트
 import "../cssdesign/search.css";
+
+//페이지 이동
 import Directions_list from "./search_list";
+
+//쓰이는 이미지
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
@@ -34,7 +38,6 @@ export const Search = () => {
         location: displayValue,
         type: 0
       };
-
       setData([newData, ...data]);
       destination.push(displayValue);
       setInputValue("");
@@ -49,6 +52,7 @@ export const Search = () => {
     }
   };
 
+  //기록 없애기 x를 누르르면 없어짐 하지만 이것도 지금 필요는 없음
   const handleRemoveData = (index) => {
     setData(data.filter((_, i) => i !== index));
   };
@@ -80,6 +84,7 @@ export const Search = () => {
             </div>
           </div>
         </div>
+        {/* 페이지 이동 */}
         <div>
           <Directions_list 
             data={data} 

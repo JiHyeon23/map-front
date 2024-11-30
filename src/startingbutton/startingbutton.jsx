@@ -98,7 +98,7 @@ function Startingbutton() {
           </div>
           <img className="startingbutton_menu" src={menuIcon} alt="Menu" />
         </div>
-        <Startingbuttonfinish />
+        <Startingbuttonfinish /> {/* 길찾기 종료 페이지 호출 */}
 
       </div>
     </div>

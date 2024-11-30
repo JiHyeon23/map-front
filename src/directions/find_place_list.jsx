@@ -1,4 +1,4 @@
-//검색 후 길찾기의 밑에 나오는 저장된 리스트 함수
+//검색 후 길찾기의 밑에 나오는 저장된 리스트 함수 현재 필요 없음
 import React from "react";
 import "../cssdesign/find_place.css"; // 스타일링을 위한 클래스 네임 연결
 import art from '../img/arrow-right-top.svg';

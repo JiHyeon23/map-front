@@ -138,6 +138,7 @@ const OverlapGroupNormal = ({ toggleHeight, onUserChange }) => {
                                 }}
                             ></div>
                             <div className="element">
+                                {/* 버튼 누르면 일반인, 여성, 노인이 클릭됨 */}
                                 <button
                                     className={`div-3 ${
                                         selectedButton >= 1 ? 'selected' : ''

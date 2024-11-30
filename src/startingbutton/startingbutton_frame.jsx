@@ -1,4 +1,4 @@
-//상세경로 - 제외
+//상세경로 - 제외 지금 안 쓰임
 import React, { useState, useEffect } from 'react';
 import '../cssdesign/startingbutton_frame_style.css';
 

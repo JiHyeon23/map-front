@@ -1,3 +1,4 @@
+//제일 처음 시작하는 페이지
 import React, { useState, useEffect } from 'react';
 import '../cssdesign/main-normal.css';
 import {
@@ -29,7 +30,7 @@ import Find_place_again from '../directions/find_place_again';
 //메인 화면
 
 function Main_normal() {
-    localStorage.clear(); //findwaybus 목적지 리셋
+    localStorage.clear(); //로컬 스토리지 리셋,findwaybus 목적지 리셋
 
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,7 @@ function Main_normal() {
 
     const [selectedUser, setSelectedUser] = useState('male');
 
+    //페이지 올라오고 내려가기
     const toggleHeight = () => {
         if (isOpen) {
             setHeight('57px');
@@ -58,11 +60,11 @@ function Main_normal() {
             <div className="div">
                 <div className="overlap">
                     <div className="frame">
-                        {/* 
                         <div style={{ width: '100%', height: '100vh' }}>
-                            <MapComponent />
-                        </div>*/}
+                            <MapComponent /> {/*API*/}
+                        </div>
                     </div>
+                    {/* 일반인,여성,노인 버튼 */}
                     {selectedUser === 'male' && <ButtonSectionNormal />}
                     {selectedUser === 'female' && <ButtonSectionFemale />}
                     {selectedUser === 'wheelchair' && <ButtonSectionNoin />}
@@ -74,6 +76,7 @@ function Main_normal() {
                             transition: 'top 0.3s ease, height 0.3s ease',
                         }}
                     >
+                        {/* 페이지올라옴 */}
                         <OverlapGroup
                             toggleHeight={toggleHeight}
                             onUserChange={handleUserChange}
@@ -91,9 +94,10 @@ function Main_normal() {
                             alt="map spicy 로고"
                         />
                     </div>
+                    {/*누르면 search 페이지로 이동*/}
                     <button
                         className="view-4"
-                        onClick={() => navigate('/search')}
+                        onClick={() => navigate('/search')} 
                     >
                         <img
                             className="image-5"

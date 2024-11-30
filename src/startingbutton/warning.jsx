@@ -1,4 +1,4 @@
-// 경고 
+// 경고 페이지
 import React from "react";
 import image from "../img/warning.png";
 import "../cssdesign/warning_style.css";

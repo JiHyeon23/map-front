@@ -1,4 +1,4 @@
-//검색 후 길찾기
+//출발지 검색 후 길찾기 - 목적지 찾기 뒤에 나오는 것 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";

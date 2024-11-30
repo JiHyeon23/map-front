@@ -1,3 +1,4 @@
+//노인 버튼 누르면 나오는 페이지
 import React, { useState, useRef } from 'react';
 
 import gong4 from '../img/gong4.png';

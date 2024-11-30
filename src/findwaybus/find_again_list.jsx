@@ -1,3 +1,4 @@
+//안씀
 //검색 후 장소 목록 박스 
 import React from "react";
 import "./find_again";

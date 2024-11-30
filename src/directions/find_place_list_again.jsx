@@ -1,5 +1,6 @@
+//현재 필요 없는 페이지
 import React from "react";
-import "../cssdesign/find_place.css"; // 스타일링을 위한 클래스 네임 연결
+import "../cssdesign/find_place.css"; 
 import art from '../img/arrow-right-top.svg';
 
 function Find_place_list_again(props) {
@@ -8,9 +9,8 @@ function Find_place_list_again(props) {
   return (
     <div className="place-list-wrapper_find_place">
       {data.map((place) => {
-        const { name, purpose, addr, km } = place;
+        const { name, purpose, addr, km } = place; //장소 기록애서 저장됨
 
-        // 각 항목을 렌더링하는 부분
         return (
           <div className="place-list_find_place" key={name}> {/* 고유 값인 name을 key로 사용 */}
             <div className="place-info_find_place">

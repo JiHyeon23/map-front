@@ -1,12 +1,15 @@
-//검색 후 길찾기
+//검색 후 길찾기 페이지 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "../cssdesign/find_place.css";
+
+//페이지 이동
 import Find_place_list from "./find_place_list";
 import MapComponent from "../main/MapComponent";
 import Search from "../directions/search";
 
+//사용되는 이미지
 import mapSpicy from '../img/mapspicy.png';
 import mike from '../img/mike.svg';
 import menu from '../img/menu.svg';
@@ -80,7 +83,8 @@ export const Find_place = () => {
             </div>
           </div>
         </div> 
-      </div> 
+      </div>
+      {/* 지도-api / 목록 - 리스트 페이지 불러오기 이동 버튼 누르면 동작  */} 
       <div>
         {isClicked ? (
           <div className="map_find_place">

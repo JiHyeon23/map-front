@@ -34,7 +34,6 @@ export const Search_again = () => {
         location: displayValue,
         type: 0
       };
-
       setData([newData, ...data]);
       startpoint.push(displayValue);
       setInputValue("");
@@ -49,6 +48,7 @@ export const Search_again = () => {
     }
   };
 
+  //x누르면 삭제
   const handleRemoveData = (index) => {
     setData(data.filter((_, i) => i !== index));
   };

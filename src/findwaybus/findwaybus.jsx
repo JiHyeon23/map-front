@@ -1,10 +1,13 @@
+//이 페이지에서 목적지와 출발지가 저장됨
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
 import '../cssdesign/findwaybus_style.css';
+
+//페이지 이동
 import Findwaybus_frame from '../findwaybus/findwaybus_frame';
 
+//쓰이는 이미지
 import busYellow from '../img/busyellow.svg';
 import busBlack from '../img/busblack.svg';
 import runningManBlack from '../img/runningmanblack.png';
@@ -16,11 +19,14 @@ import arrowTop from '../img/arrow-top.png';
 import arrowDown from '../img/arrow-down.png';
 
 function FindWayBus() {
-    const navigate = useNavigate();
+    //라우터
+    const navigate = useNavigate(); 
     const location = useLocation();
-    const [selected, setSelected] = useState('walking');
-    const [departure, setDeparture] = useState(location.state?.startpoint || ''); // 출발지 상태
-    const [destination, setDestination] = useState(localStorage.getItem('destination') || location.state?.destination || ''); // 목적지 상태
+
+    const [selected, setSelected] = useState('walking'); //시작을 도보 눌린 상태로 시작
+    
+    const [departure, setDeparture] = useState(location.state?.startpoint || ''); // 출발지 상태 입력창에 불러냄
+    const [destination, setDestination] = useState(localStorage.getItem('destination') || location.state?.destination || ''); // 목적지 상태 입력창에 불러냄
 
     const handleClick = () => {
         navigate("/Main_normal");  // "Main_normal" 페이지로 이동
@@ -31,6 +37,7 @@ function FindWayBus() {
         console.log('Destination:', destination); // 상태 값 확인
     }, [departure, destination]);
 
+    //버스 누르면 버스
     const handleBusClick = () => {
         if (selected !== 'bus') {
             setSelected('bus');
@@ -38,6 +45,7 @@ function FindWayBus() {
         }
     };
 
+    //도보 누르면 도보
     const handleWalkingClick = () => {
         if (selected !== 'walking') {
             setSelected('walking');
@@ -50,6 +58,7 @@ function FindWayBus() {
         setDestination(departure); // 출발지를 목적지로 설정
     };
 
+    //로컬스토리지씀
     const handleFindWay = () => {
         // 목적지 값 localStorage에 저장
         localStorage.setItem('destination', destination); // destination을 저장
@@ -135,9 +144,10 @@ function FindWayBus() {
                     />
                 </div>
                 <div className="view-3_bus">
+                     {/*출발지 적는 창*/}
                     <div
                         className="frame-clikable_bus"
-                        onClick={handleFindWay} // 목적지 값을 저장하고 navigate 호출
+                        onClick={handleFindWay} // 목적지 값을 저장하고 navigate 호출 - 출발지 입력 받을 때 목적지 사라지는 것 방지
                     >
                         <input
                             type="text"
@@ -147,7 +157,7 @@ function FindWayBus() {
                             onChange={(e) => setDeparture(e.target.value)} // 출발지 값 변경
                         />
                     </div>
-
+                    {/*목적지 적는 창*/}
                     <div className="frame-2_bus">
                         <input
                             type="text"
@@ -169,6 +179,8 @@ function FindWayBus() {
                             src={arrowTop}
                             alt="Arrow Up Icon"
                         />
+                        
+                        {/* 목적지와 출발지바꾸기 버튼  */}
                         <img
                             className="arrow-left-2_bus"
                             src={arrowDown}

@@ -1,4 +1,4 @@
-//따라가기 버튼
+//따라가기 버튼 페이지
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import motionSensor from '../img/motion-sensor.svg'; // 이미지 import
